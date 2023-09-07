@@ -6,13 +6,19 @@ var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
 
-#Vars for CamBob
+#CamBob
 var direction = Vector3.ZERO
 var _delta = 0.0
 var cb_speed = 7
 var cb_height = 0.5
 @onready var camera = $Camera3D
 @onready var cameraPos :Vector3 = camera.position
+
+#Ground detection
+var noiseFootstep = 0.0
+var numberOfFootsteps = 3
+var running = false
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -24,6 +30,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	cambob(delta)
+	handle_ground()
 
 
 func _input(event):
@@ -58,3 +65,25 @@ func cambob(delta):
 	
 	var objCam = cameraPos + Vector3.UP * sin(cam_bob) * cb_height
 	camera.position = camera.position.lerp(objCam, delta)
+
+
+func handle_ground():
+	if $GroundDetectionRayCast.is_colliding():
+		var terrain = $GroundDetectionRayCast.get_collider().get_parent()
+		if terrain != null:
+			var terraingroup = terrain.get_groups()[0]
+			walking_sounds(terraingroup)
+
+
+func walking_sounds(group : String):
+	if (int(velocity.x) != 0) || (int(velocity.z != 0)):
+		noiseFootstep += 0.1
+	
+	if noiseFootstep > numberOfFootsteps and is_on_floor():
+		match group:
+			"WoodenFloor":
+				$FootstepsSFX.stream = load("res://SFX/Effects/WoodenFloorWalk.ogg")
+		
+		$FootstepsSFX.pitch_scale = randf_range(0.8, 1.2)
+		$FootstepsSFX.play()
+		noiseFootstep = 0.0

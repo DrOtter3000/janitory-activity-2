@@ -14,3 +14,8 @@ shape = SubResource("CapsuleShape3D_533aj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.546167, 0)
+
+[node name="GroundDetectionRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203024, 0)
+
+[node name="FootstepsSFX" type="AudioStreamPlayer" parent="."]
