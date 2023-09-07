@@ -10,12 +10,12 @@ data = PackedVector3Array(-5, 0.5, 7.5, 5, 0.5, 7.5, -5, -0.5, 7.5, 5, 0.5, 7.5,
 
 [node name="Home" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="." groups=["WoodenFloor"]]
 mesh = SubResource("BoxMesh_u8r0f")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wsdji")
 
 [node name="Player" parent="." instance=ExtResource("1_he85h")]
