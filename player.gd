@@ -70,7 +70,7 @@ func cambob(delta):
 func handle_ground():
 	if $GroundDetectionRayCast.is_colliding():
 		var terrain = $GroundDetectionRayCast.get_collider().get_parent()
-		if terrain != null:
+		if terrain != null and terrain.get_groups().size() > 0:
 			var terraingroup = terrain.get_groups()[0]
 			walking_sounds(terraingroup)
 
