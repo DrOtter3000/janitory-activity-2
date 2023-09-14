@@ -10,7 +10,7 @@ var mouse_sensitivity = 0.002
 var direction = Vector3.ZERO
 var _delta = 0.0
 var cb_speed = 7
-var cb_height = 0.5
+var cb_height = 0.1
 @onready var camera = $Camera3D
 @onready var cameraPos :Vector3 = camera.position
 
