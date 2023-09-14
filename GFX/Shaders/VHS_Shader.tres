@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://3baaldmppf0l"]
+
+[ext_resource type="Shader" path="res://GFX/Shaders/VHS_Shader.gdshader" id="1_ixgj0"]
+
+[resource]
+shader = ExtResource("1_ixgj0")
+shader_parameter/shake = 0.005
+shader_parameter/noiseQuality = 250.0
+shader_parameter/noiseIntensity = 0.001
+shader_parameter/offsetIntensity = 0.05
+shader_parameter/colorOffsetIntensity = 0.5
