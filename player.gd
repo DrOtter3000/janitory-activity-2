@@ -83,7 +83,8 @@ func walking_sounds(group : String):
 		match group:
 			"WoodenFloor":
 				$FootstepsSFX.stream = load("res://SFX/Effects/WoodenFloorWalk.ogg")
-		
+			"ConcreteFloor":
+				$FootstepsSFX.stream = load("res://SFX/Effects/ConcreteWalk.ogg")
 		$FootstepsSFX.pitch_scale = randf_range(0.8, 1.2)
 		$FootstepsSFX.play()
 		noiseFootstep = 0.0
