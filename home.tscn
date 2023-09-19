@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b48h5brtteknm"]
+[gd_scene load_steps=38 format=3 uid="uid://b48h5brtteknm"]
 
 [ext_resource type="PackedScene" uid="uid://1jp41c7npvmj" path="res://player.tscn" id="1_he85h"]
 [ext_resource type="PackedScene" uid="uid://biwicyst0vkl2" path="res://Enterior/Bed.glb" id="2_oikyd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cqt5iewxl1uda" path="res://Enterior/couch.glb" id="6_y2udo"]
 [ext_resource type="PackedScene" uid="uid://dc38neq3cav1u" path="res://Enterior/TVboard.glb" id="7_62kot"]
 [ext_resource type="PackedScene" uid="uid://cc2vohcbwevr1" path="res://Enterior/couchtable.glb" id="8_5woc4"]
+[ext_resource type="PackedScene" uid="uid://4c8o654oq8fo" path="res://Enterior/Nighttable.glb" id="9_wur5g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tdsud"]
 sky_top_color = Color(0.133333, 0.160784, 0.278431, 1)
@@ -91,10 +92,21 @@ data = PackedVector3Array(-0.6655, 1, 0.8333, -0.6655, 1, -0.8333, -0.6655, 1, 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_7qj47"]
 size = Vector3(0.581356, 0.461964, 1.20213)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ymdfe"]
+data = PackedVector3Array(1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -0.9147, 0.8, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -0.9147, -0.8, -1, -1, -1, -1, 1, -1, -1, 0.0853, -0.8, -1, -0.9147, -0.8, -1, 0.0853, 0.8, -1, 1, 1, -1, -0.9147, 0.8, -1, 1, -1, -1, 0.0853, 0.8, -1, 0.0853, -0.8, -1, 1, 1, -1, 0.0853, 0.8, -1, 1, -1, -1, -1, -1, -1, -0.9147, 0.8, -1, -1, 1, -1, -1, -1, -1, -0.9147, -0.8, -1, -0.9147, 0.8, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 0.0853, -0.8, 1, -1, -1, 1, -0.9147, -0.8, 1, 1, 1, 1, -0.9147, 0.8, 1, -1, 1, 1, 1, 1, 1, 0.0853, 0.8, 1, -0.9147, 0.8, 1, 0.0853, -0.8, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 0.0853, -0.8, 1, 0.0853, 0.8, 1, 1, -1, 1, 0.0853, -0.8, 1, 1, 1, 1, -0.9147, 0.8, 1, -1, -1, 1, -1, 1, 1, -0.9147, 0.8, 1, -0.9147, -0.8, 1, -1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, 0.0853, -0.8, 1, -0.9147, -0.8, -1, -0.9147, -0.8, -1, 0.0853, -0.8, 1, 0.0853, -0.8, 1, -0.9147, -0.8, 1, -0.9147, 0.8, -1, 0.0853, 0.8, -1, -0.9147, 0.8, 1, -0.9147, 0.8, 1, 0.0853, 0.8, -1, 0.0853, 0.8, -1, -0.9147, -0.8, 1, -0.9147, 0.8, -1, -0.9147, 0.8, -1, -0.9147, -0.8, 1, -0.9147, -0.8, 1, -0.9147, 0.8, 1, 0.0853, 0.8, -1, 0.0853, -0.8, -1, 0.0853, 0.8, 1, 0.0853, 0.8, 1, 0.0853, -0.8, -1, 0.0853, -0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tofq0"]
+transparency = 1
+albedo_color = Color(1, 0.427451, 1, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xarfo"]
+transparency = 1
+albedo_color = Color(1, 0.356863, 1, 0.545098)
+
 [node name="Home" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 10, 0)
 light_energy = 0.0
 shadow_enabled = true
 
@@ -244,15 +256,16 @@ shape = SubResource("ConcavePolygonShape3D_yac6y")
 [node name="Lamps" type="Node" parent="."]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamps"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4607, 3.55627, -0.733981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3405, 3.3151, -1.65122)
 shadow_enabled = true
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lamps"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.36847, 3.4384, -6.21338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05064, 3.23986, -6.0654)
 shadow_enabled = true
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lamps"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.28, 1.35535, -5.12789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2027, 1.29513, -4.94609)
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="TVboard" parent="." instance=ExtResource("7_62kot")]
@@ -281,5 +294,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3904, 0.915887, 0.764585)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.219437, 0)
 shape = SubResource("BoxShape3D_7qj47")
 
+[node name="Nighttable" parent="." instance=ExtResource("9_wur5g")]
+transform = Transform3D(0.0209429, 0, 1.19982, 0, 1.2, 0, -1.19982, 0, 0.0209429, -11.103, 0.797768, -5.09369)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Nighttable/Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nighttable/Cube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ymdfe")
+
+[node name="Cylinder_001" parent="Nighttable" index="2"]
+transform = Transform3D(0.075, 0, 0, 0, 0.04, 0, 0, 0, 0.075, -0.123833, 0.362235, -0.0806427)
+surface_material_override/0 = SubResource("StandardMaterial3D_tofq0")
+surface_material_override/1 = SubResource("StandardMaterial3D_xarfo")
+
 [editable path="House"]
 [editable path="couch"]
+[editable path="Nighttable"]
