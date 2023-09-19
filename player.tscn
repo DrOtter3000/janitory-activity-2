@@ -25,6 +25,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[node name="Flashlight" type="SpotLight3D" parent="Camera3D"]
+shadow_enabled = true
+
 [node name="GroundDetectionRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203024, 0)
 

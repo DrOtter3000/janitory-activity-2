@@ -19,6 +19,8 @@ var noiseFootstep = 0.0
 var numberOfFootsteps = 3
 var running = false
 
+var has_flashlight = true
+var flashlight = true
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -31,6 +33,9 @@ func _physics_process(delta):
 func _process(delta):
 	cambob(delta)
 	handle_ground()
+	if Input.is_action_just_pressed("flashlight"):
+		if has_flashlight:
+			switch_flashlight()
 
 
 func _input(event):
@@ -38,6 +43,14 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(60), deg_to_rad(65))
+
+
+func switch_flashlight():
+	if flashlight == false:
+		$Camera3D/Flashlight.light_energy = 1
+	elif flashlight == true:
+		$Camera3D/Flashlight.light_energy = 0
+	flashlight = !flashlight
 
 
 func movement(delta):

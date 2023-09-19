@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b48h5brtteknm"]
+[gd_scene load_steps=35 format=3 uid="uid://b48h5brtteknm"]
 
 [ext_resource type="PackedScene" uid="uid://1jp41c7npvmj" path="res://player.tscn" id="1_he85h"]
 [ext_resource type="PackedScene" uid="uid://biwicyst0vkl2" path="res://Enterior/Bed.glb" id="2_oikyd"]
@@ -9,22 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dc38neq3cav1u" path="res://Enterior/TVboard.glb" id="7_62kot"]
 [ext_resource type="PackedScene" uid="uid://cc2vohcbwevr1" path="res://Enterior/couchtable.glb" id="8_5woc4"]
 [ext_resource type="PackedScene" uid="uid://4c8o654oq8fo" path="res://Enterior/Nighttable.glb" id="9_wur5g"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tdsud"]
-sky_top_color = Color(0.133333, 0.160784, 0.278431, 1)
-sky_horizon_color = Color(0.571569, 0.572549, 0.594118, 1)
-ground_bottom_color = Color(0.152941, 0.129412, 0.0980392, 1)
-ground_horizon_color = Color(0.571569, 0.572549, 0.594118, 1)
-
-[sub_resource type="Sky" id="Sky_cjk5j"]
-sky_material = SubResource("ProceduralSkyMaterial_tdsud")
-
-[sub_resource type="Environment" id="Environment_451k8"]
-background_mode = 2
-sky = SubResource("Sky_cjk5j")
-tonemap_mode = 2
-glow_enabled = true
-volumetric_fog_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_u8r0f"]
 size = Vector3(200, 1, 200)
@@ -109,9 +93,6 @@ albedo_color = Color(1, 0.356863, 1, 0.545098)
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 10, 0)
 light_energy = 0.0
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_451k8")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
