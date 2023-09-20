@@ -26,6 +26,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Flashlight" type="SpotLight3D" parent="Camera3D"]
+light_energy = 0.0
 shadow_enabled = true
 
 [node name="GroundDetectionRayCast" type="RayCast3D" parent="."]

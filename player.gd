@@ -20,7 +20,8 @@ var numberOfFootsteps = 3
 var running = false
 
 var has_flashlight = true
-var flashlight = true
+var flashlight = false
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -33,6 +34,10 @@ func _physics_process(delta):
 func _process(delta):
 	cambob(delta)
 	handle_ground()
+	check_flashlight_status()
+
+
+func check_flashlight_status():
 	if Input.is_action_just_pressed("flashlight"):
 		if has_flashlight:
 			switch_flashlight()
