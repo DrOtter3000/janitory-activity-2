@@ -29,6 +29,9 @@ color = Color(0, 0, 0, 0)
 light_energy = 0.0
 shadow_enabled = true
 
+[node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -2)
+
 [node name="GroundDetectionRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203024, 0)
 

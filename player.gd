@@ -35,6 +35,10 @@ func _process(delta):
 	cambob(delta)
 	handle_ground()
 	check_flashlight_status()
+	var interactor = $Camera3D/InteractRaycast.get_collider()
+	if Input.is_action_just_pressed("interact"):
+		if interactor != null and interactor.get_parent().is_in_group("Interactors"):
+			interactor.use()
 
 
 func check_flashlight_status():
