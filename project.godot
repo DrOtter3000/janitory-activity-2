@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Janitory Activity 2"
-run/main_scene="res://home.tscn"
+run/main_scene="res://park.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 
 [editor]

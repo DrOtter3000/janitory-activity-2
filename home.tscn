@@ -151,7 +151,7 @@ transform = Transform3D(-0.105066, 0, -0.994465, 0, 1, 0, 0.994465, 0, -0.105066
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, -0.183169, 0)
 shape = SubResource("BoxShape3D_e2m8q")
 
-[node name="Table" parent="." groups=["Interactors"] instance=ExtResource("4_iq7h4")]
+[node name="Table" parent="." instance=ExtResource("4_iq7h4")]
 transform = Transform3D(0.000261758, 0, -1, 0, 1, 0, 1, 0, 0.000261758, -7.52283, 1.23552, -2.34034)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Table"]
