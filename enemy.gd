@@ -42,8 +42,6 @@ func _process(delta):
 		"patrol":
 			var direction = Vector3()
 			
-			$Dingo.look_at(nav.get_next_path_position())
-			
 			nav.target_position = patrol_point.global_position
 			
 			direction = nav.get_next_path_position() - global_position
@@ -52,6 +50,9 @@ func _process(delta):
 			
 			velocity = direction * (speed)
 			velocity.y -= gravity * delta
+			
+			var look_direction = -Vector2(velocity.z, velocity.x)
+			$Dingo.rotation.y = look_direction.angle()
 			
 			if nav.is_navigation_finished():
 				set_new_target_point()
