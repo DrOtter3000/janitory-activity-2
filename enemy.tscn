@@ -473,7 +473,13 @@ skeleton = NodePath("")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "search_mode"
+autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_j4jtg")
 }
+
+[node name="HauntingTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="HauntingTimer" to="." method="_on_haunting_timer_timeout"]
