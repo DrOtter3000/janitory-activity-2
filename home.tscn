@@ -1,14 +1,16 @@
-[gd_scene load_steps=35 format=3 uid="uid://b48h5brtteknm"]
+[gd_scene load_steps=38 format=3 uid="uid://b48h5brtteknm"]
 
 [ext_resource type="PackedScene" uid="uid://1jp41c7npvmj" path="res://player.tscn" id="1_he85h"]
-[ext_resource type="PackedScene" uid="uid://biwicyst0vkl2" path="res://Enterior/Bed.glb" id="2_oikyd"]
-[ext_resource type="PackedScene" uid="uid://bwoccm86ple0u" path="res://Enterior/Chair.glb" id="3_5rnxi"]
-[ext_resource type="PackedScene" uid="uid://ud8p8wogmmh6" path="res://Enterior/Table.glb" id="4_iq7h4"]
-[ext_resource type="PackedScene" uid="uid://x2042yxselnt" path="res://Buildings/Home/House.glb" id="5_mujmi"]
-[ext_resource type="PackedScene" uid="uid://cqt5iewxl1uda" path="res://Enterior/couch.glb" id="6_y2udo"]
-[ext_resource type="PackedScene" uid="uid://dc38neq3cav1u" path="res://Enterior/TVboard.glb" id="7_62kot"]
-[ext_resource type="PackedScene" uid="uid://cc2vohcbwevr1" path="res://Enterior/couchtable.glb" id="8_5woc4"]
-[ext_resource type="PackedScene" uid="uid://4c8o654oq8fo" path="res://Enterior/Nighttable.glb" id="9_wur5g"]
+[ext_resource type="PackedScene" uid="uid://biwicyst0vkl2" path="res://GFX/Enterior/Bed.glb" id="2_oikyd"]
+[ext_resource type="PackedScene" uid="uid://bwoccm86ple0u" path="res://GFX/Enterior/Chair.glb" id="3_5rnxi"]
+[ext_resource type="PackedScene" uid="uid://ud8p8wogmmh6" path="res://GFX/Enterior/Table.glb" id="4_iq7h4"]
+[ext_resource type="PackedScene" uid="uid://x2042yxselnt" path="res://GFX/Buildings/Home/House.glb" id="5_mujmi"]
+[ext_resource type="PackedScene" uid="uid://cqt5iewxl1uda" path="res://GFX/Enterior/couch.glb" id="6_y2udo"]
+[ext_resource type="PackedScene" uid="uid://dc38neq3cav1u" path="res://GFX/Enterior/TVboard.glb" id="7_62kot"]
+[ext_resource type="PackedScene" uid="uid://cc2vohcbwevr1" path="res://GFX/Enterior/couchtable.glb" id="8_5woc4"]
+[ext_resource type="PackedScene" uid="uid://4c8o654oq8fo" path="res://GFX/Enterior/Nighttable.glb" id="9_wur5g"]
+[ext_resource type="PackedScene" uid="uid://nt3embd1rxqm" path="res://GFX/Buildings/Home/Garage.glb" id="10_1l8pu"]
+[ext_resource type="PackedScene" uid="uid://cyoerpnjc36pc" path="res://GFX/Enterior/Car.glb" id="11_x2phc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u8r0f"]
 size = Vector3(200, 1, 200)
@@ -86,6 +88,8 @@ albedo_color = Color(1, 0.427451, 1, 0.8)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xarfo"]
 transparency = 1
 albedo_color = Color(1, 0.356863, 1, 0.545098)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gg5j"]
 
 [node name="Home" type="Node3D"]
 
@@ -288,6 +292,16 @@ transform = Transform3D(0.075, 0, 0, 0, 0.04, 0, 0, 0, 0.075, -0.123833, 0.36223
 surface_material_override/0 = SubResource("StandardMaterial3D_tofq0")
 surface_material_override/1 = SubResource("StandardMaterial3D_xarfo")
 
+[node name="Garage" parent="." instance=ExtResource("10_1l8pu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9242, 0.0122436, 6.19422)
+
+[node name="Cube" parent="Garage" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0gg5j")
+
+[node name="Car" parent="." instance=ExtResource("11_x2phc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.372272, 0.934071, 5.53427)
+
 [editable path="House"]
 [editable path="couch"]
 [editable path="Nighttable"]
+[editable path="Garage"]

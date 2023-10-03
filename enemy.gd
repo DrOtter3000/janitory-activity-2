@@ -43,7 +43,7 @@ func _process(delta):
 				else:
 					print($Dingo/Cube_001/LineOfSightRayCasts/RayCast3D.get_collider())
 					get_back_trail()
-			
+
 
 		"patrol":
 			$AnimationPlayer.play("search_mode")
@@ -67,7 +67,7 @@ func _process(delta):
 			look_for_player()
 
 	move_and_slide()
-	print($HauntingTimer.time_left)
+
 
 func look_for_player():
 	for i in $Dingo/Cube_001/LineOfSightRayCasts.get_children():
