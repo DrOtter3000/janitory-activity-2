@@ -41,7 +41,6 @@ func _process(delta):
 				if $Dingo/Cube_001/LineOfSightRayCasts/RayCast3D.get_collider().is_in_group("Player"):
 					lost_trail = false
 				else:
-					print($Dingo/Cube_001/LineOfSightRayCasts/RayCast3D.get_collider())
 					get_back_trail()
 
 

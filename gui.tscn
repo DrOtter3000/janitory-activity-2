@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4obgjuxe85lf"]
+
+[ext_resource type="Script" path="res://gui.gd" id="1_op54d"]
+
+[node name="GUI" type="CanvasLayer" groups=["GUI"]]
+script = ExtResource("1_op54d")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActivityLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2

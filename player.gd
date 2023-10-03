@@ -35,11 +35,14 @@ func _process(delta):
 	cambob(delta)
 	handle_ground()
 	check_flashlight_status()
-	var interactor = $Camera3D/InteractRaycast.get_collider()
-	if Input.is_action_just_pressed("interact"):
-		if interactor is Useables:
-			interactor.use()
 
+	var interactor = $Camera3D/InteractRaycast.get_collider()
+	if interactor is Useables:
+		interactor.update_gui()
+		if Input.is_action_just_pressed("interact"):
+			interactor.use()
+	else:
+		get_tree().call_group("GUI", "update_ActivityLabel", "")
 
 func check_flashlight_status():
 	if Input.is_action_just_pressed("flashlight"):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1jp41c7npvmj"]
+[gd_scene load_steps=5 format=3 uid="uid://1jp41c7npvmj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ckh1"]
 [ext_resource type="Material" uid="uid://3baaldmppf0l" path="res://GFX/Shaders/VHS_Shader.tres" id="2_4j0w1"]
+[ext_resource type="PackedScene" uid="uid://c4obgjuxe85lf" path="res://gui.tscn" id="3_g0but"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_533aj"]
 radius = 0.3
@@ -31,6 +32,8 @@ shadow_enabled = true
 
 [node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -2)
+
+[node name="GUI" parent="Camera3D" instance=ExtResource("3_g0but")]
 
 [node name="GroundDetectionRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203024, 0)
