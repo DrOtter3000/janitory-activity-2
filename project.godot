@@ -14,6 +14,10 @@ config/name="Janitory Activity 2"
 run/main_scene="res://park.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 
+[autoload]
+
+Gamestate="*res://Gamestate.gd"
+
 [editor]
 
 movie_writer/movie_file="/home/drotter3000/Games/Janitory Activity 2/Beispiel2.avi"
