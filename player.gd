@@ -44,6 +44,7 @@ func _process(delta):
 	else:
 		get_tree().call_group("GUI", "update_ActivityLabel", "")
 
+
 func check_flashlight_status():
 	if Input.is_action_just_pressed("flashlight"):
 		if has_flashlight:
