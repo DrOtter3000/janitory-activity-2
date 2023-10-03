@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3s0hscphsgpm"]
+
+[ext_resource type="Script" path="res://UseableObjects/Useable.gd" id="1_11j3b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ug058"]
+size = Vector3(0.501969, 1.20379, 0.436664)
+
+[node name="Useable" type="Node3D"]
+script = ExtResource("1_11j3b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ug058")

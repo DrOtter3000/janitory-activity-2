@@ -37,7 +37,7 @@ func _process(delta):
 	check_flashlight_status()
 	var interactor = $Camera3D/InteractRaycast.get_collider()
 	if Input.is_action_just_pressed("interact"):
-		if interactor != null and interactor.get_parent().is_in_group("Interactors"):
+		if interactor is Useables:
 			interactor.use()
 
 
