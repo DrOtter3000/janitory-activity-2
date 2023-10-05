@@ -114,3 +114,11 @@ func walking_sounds(group : String):
 		$FootstepsSFX.pitch_scale = randf_range(0.8, 1.2)
 		$FootstepsSFX.play()
 		noiseFootstep = 0.0
+
+
+func take_mop():
+	$Camera3D/MopInHand.visible = true
+
+
+func drop_mop():
+	$Camera3D/MopInHand.queue_free()

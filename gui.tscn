@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4obgjuxe85lf"]
+[gd_scene load_steps=3 format=3 uid="uid://c4obgjuxe85lf"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_op54d"]
+[ext_resource type="Theme" uid="uid://g83ropha44pl" path="res://Themes/GUI_Theme.tres" id="2_ibl1w"]
 
 [node name="GUI" type="CanvasLayer" groups=["GUI"]]
 script = ExtResource("1_op54d")
@@ -14,3 +15,11 @@ grow_vertical = 2
 
 [node name="ActivityLabel" type="Label" parent="CenterContainer"]
 layout_mode = 2
+theme = ExtResource("2_ibl1w")
+
+[node name="MissionLabel" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 640.0
+offset_bottom = 48.0
+theme = ExtResource("2_ibl1w")

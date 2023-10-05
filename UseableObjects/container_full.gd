@@ -24,3 +24,7 @@ func update_gui():
 			get_tree().call_group("GUI", "update_ActivityLabel", "(E)Drop Trash")
 	else:
 		get_tree().call_group("GUI", "update_ActivityLabel", "Collect more Trash")
+
+
+func make_useable():
+	ready_to_use = true

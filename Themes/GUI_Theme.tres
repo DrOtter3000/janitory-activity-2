@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://g83ropha44pl"]
+
+[ext_resource type="FontFile" uid="uid://bds2uei7xj06x" path="res://Fonts/carbon.ttf" id="1_3hb4m"]
+
+[resource]
+default_font = ExtResource("1_3hb4m")

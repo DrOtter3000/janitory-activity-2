@@ -86,7 +86,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ajj3r")
 
-[node name="ContainerFull" instance=ExtResource("1_5iujr")]
+[node name="ContainerFull" groups=["Container"] instance=ExtResource("1_5iujr")]
 script = ExtResource("2_crcsx")
 
 [node name="CollisionShape3D" parent="." index="0"]
