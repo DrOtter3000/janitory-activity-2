@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 
 Gamestate="*res://Gamestate.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 movie_writer/movie_file="/home/drotter3000/Games/Janitory Activity 2/Beispiel2.avi"

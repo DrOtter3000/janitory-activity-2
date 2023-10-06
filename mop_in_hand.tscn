@@ -112,7 +112,7 @@ _data = {
 script = ExtResource("1_3sndx")
 
 [node name="Mop" parent="." instance=ExtResource("1_q24x5")]
-transform = Transform3D(0.215989, 0.972019, 0.0923409, -0.975196, 0.219443, -0.028929, -0.0483832, -0.0838022, 0.995307, -0.461224, -0.417777, 0.0677069)
+transform = Transform3D(0.215987, 0.972019, 0.0923409, -0.975196, 0.219442, -0.0289291, -0.0483831, -0.0838022, 0.995307, -0.461224, -0.417777, 0.0677069)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"

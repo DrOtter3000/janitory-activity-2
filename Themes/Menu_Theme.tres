@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cm7u8tucrkcqk"]
+
+[ext_resource type="FontFile" uid="uid://bds2uei7xj06x" path="res://Fonts/carbon.ttf" id="1_kxxxl"]
+
+[resource]
+default_font = ExtResource("1_kxxxl")
+default_font_size = 25
+Button/fonts/font = ExtResource("1_kxxxl")
