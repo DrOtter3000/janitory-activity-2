@@ -16,7 +16,7 @@ func _process(delta):
 func spawn_enemy():
 	var enemy = new_enemy.instantiate() as Node3D
 	add_child(enemy)
-	enemy.global_position = Vector3.ZERO
+	enemy.global_position = $EnemySpawnLocation.position
 
 
 func start_phase(str):

@@ -2,7 +2,6 @@ extends "res://UseableObjects/Useable.gd"
 
 
 var ready_to_use = false
-var used = false
 
 
 func _process(delta):
@@ -11,14 +10,14 @@ func _process(delta):
 
 
 func use():
-	if ready_to_use and not used:
+	if ready_to_use and not Gamestate.container_used:
 		get_tree().call_group("Park", "spawn_enemy")
-		used = true
+		Gamestate.container_used = true
 
 
 func update_gui():
 	if ready_to_use:
-		if used:
+		if Gamestate.container_used:
 			get_tree().call_group("GUI", "update_ActivityLabel", "")
 		else:
 			get_tree().call_group("GUI", "update_ActivityLabel", "(E)Drop Trash")
