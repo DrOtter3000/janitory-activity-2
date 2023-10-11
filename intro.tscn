@@ -1,0 +1,278 @@
+[gd_scene load_steps=18 format=3 uid="uid://gjed4vkb5e0c"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_hpy1h"]
+[ext_resource type="Material" uid="uid://bes01inukpdhc" path="res://GFX/Materials/Concrete_Ground.tres" id="1_xov14"]
+[ext_resource type="PackedScene" uid="uid://cyoerpnjc36pc" path="res://GFX/Enterior/Car.glb" id="2_7m7xl"]
+[ext_resource type="PackedScene" uid="uid://cybdgg83xlhxi" path="res://GFX/Trees/fir_1.glb" id="3_7oxey"]
+[ext_resource type="PackedScene" uid="uid://bllnfip3ouavx" path="res://GFX/Trees/fir_2.glb" id="4_42kdb"]
+[ext_resource type="PackedScene" uid="uid://k675hm2vkrpm" path="res://GFX/Trees/fir_3.glb" id="5_pfq32"]
+[ext_resource type="PackedScene" uid="uid://bl8xjw0xhrxfv" path="res://GFX/Trees/fir_4.glb" id="6_8utla"]
+[ext_resource type="PackedScene" uid="uid://1ffr8351gqup" path="res://GFX/Trees/fir_5.glb" id="7_0kww5"]
+[ext_resource type="PackedScene" uid="uid://1rxealr72wid" path="res://GFX/Trees/fir_6.glb" id="8_2ww6r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qqfgs"]
+sky_top_color = Color(0.0745098, 0.0941176, 0.176471, 1)
+sky_horizon_color = Color(0.556863, 0.555882, 0.568627, 1)
+ground_bottom_color = Color(0.152941, 0.129412, 0.0980392, 1)
+ground_horizon_color = Color(0.556863, 0.555882, 0.568627, 1)
+
+[sub_resource type="Sky" id="Sky_1j5e2"]
+sky_material = SubResource("ProceduralSkyMaterial_qqfgs")
+
+[sub_resource type="Environment" id="Environment_vkpqx"]
+background_mode = 2
+sky = SubResource("Sky_1j5e2")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_density = 0.075
+
+[sub_resource type="BoxMesh" id="BoxMesh_rbjc2"]
+size = Vector3(600, 1, 2400)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmcxu"]
+material = ExtResource("1_xov14")
+size = Vector3(8, 1, 2400)
+
+[sub_resource type="Animation" id="Animation_pco0x"]
+resource_name = "Intro"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.67489, 0.904775, 0.136419), Vector3(-1.67489, 0.904775, 2010.17)]
+}
+
+[sub_resource type="Animation" id="Animation_0bane"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.67489, 0.904775, 0.136419)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r07lb"]
+_data = {
+"Intro": SubResource("Animation_pco0x"),
+"RESET": SubResource("Animation_0bane")
+}
+
+[node name="Intro" type="Node3D"]
+script = ExtResource("1_hpy1h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vkpqx")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 1001.97)
+mesh = SubResource("BoxMesh_rbjc2")
+
+[node name="Street" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1000.41)
+mesh = SubResource("BoxMesh_bmcxu")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="fir_1" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0082, 2.45108, 83.6238)
+
+[node name="fir_7" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7113, 2.45108, 330.462)
+
+[node name="fir_8" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 330.462)
+
+[node name="fir_9" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 485.106)
+
+[node name="fir_10" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.576, 2.45108, 485.106)
+
+[node name="fir_11" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1051, 2.45108, 746.104)
+
+[node name="fir_12" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -220.752, 2.45108, 746.104)
+
+[node name="fir_13" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 905.618)
+
+[node name="fir_14" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 1096.66)
+
+[node name="fir_15" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.413, 2.45108, 1096.66)
+
+[node name="fir_16" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.815, 2.45108, 983.476)
+
+[node name="fir_17" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3975, 2.45108, 1261.95)
+
+[node name="fir_18" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.4997, 2.45108, 1454.97)
+
+[node name="fir_19" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1214, 2.45108, 1454.97)
+
+[node name="fir_20" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1599.72)
+
+[node name="fir_21" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1765.99)
+
+[node name="fir_27" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.7712, 2.45108, 1858.38)
+
+[node name="fir_28" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9642, 2.45108, 1675.35)
+
+[node name="fir_29" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1553.54)
+
+[node name="fir_30" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1335.96)
+
+[node name="fir_31" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3115, 2.45108, 1335.96)
+
+[node name="fir_22" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9337, 2.45108, 1939.63)
+
+[node name="fir_23" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.1276, 2.45108, 2049.33)
+
+[node name="fir_24" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2805, 2.45108, 2034.71)
+
+[node name="fir_25" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.082, 2.45108, 2120.5)
+
+[node name="fir_26" parent="Trees" instance=ExtResource("3_7oxey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.378, 2.45108, 2120.5)
+
+[node name="fir_2" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4732, 1.4685, 172.954)
+
+[node name="fir_32" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3498, 1.4685, 399.723)
+
+[node name="fir_33" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9747, 1.4685, 399.723)
+
+[node name="fir_34" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 530.363)
+
+[node name="fir_35" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 707.98)
+
+[node name="fir_36" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.645, 1.4685, 640.199)
+
+[node name="fir_37" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.782, 1.4685, 624.771)
+
+[node name="fir_38" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5648, 1.4685, 915.926)
+
+[node name="fir_39" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1907, 1.4685, 1013.95)
+
+[node name="fir_40" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1013.95)
+
+[node name="fir_41" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1252.01)
+
+[node name="fir_42" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1252.01)
+
+[node name="fir_43" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1514.88)
+
+[node name="fir_44" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1514.88)
+
+[node name="fir_45" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1776.98)
+
+[node name="fir_46" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.568, 1.4685, 1698.76)
+
+[node name="fir_47" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.6583, 1.4685, 1698.76)
+
+[node name="fir_48" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1651.37)
+
+[node name="fir_49" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1961.24)
+
+[node name="fir_50" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1013, 1.4685, 2149.84)
+
+[node name="fir_51" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9449, 1.4685, 1417.21)
+
+[node name="fir_52" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.566, 1.4685, 1018.13)
+
+[node name="fir_53" parent="Trees" instance=ExtResource("4_42kdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8258, 1.4685, 1102.38)
+
+[node name="fir_3" parent="Trees" instance=ExtResource("5_pfq32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2159, 4.29695, 5.14988)
+
+[node name="fir_4" parent="Trees" instance=ExtResource("6_8utla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4706, 3.19889, 3.91144)
+
+[node name="fir_5" parent="Trees" instance=ExtResource("7_0kww5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1382, 4.06754, 41.3701)
+
+[node name="fir_6" parent="Trees" instance=ExtResource("8_2ww6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7727, 2.94069, 9.06417)
+
+[node name="Car" parent="." instance=ExtResource("2_7m7xl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.67489, 0.904775, 0.136419)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494946, 0.553194, 0)
+
+[node name="Driver" type="Node3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.49012e-08, 0.417863, -0.402807)
+
+[node name="Camera3D" type="Camera3D" parent="Car/Driver"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.89978, -0.313, 0.4)
+light_color = Color(1, 1, 0.854902, 1)
+light_energy = 5.0
+spot_range = 24.3671
+spot_angle = 23.9901
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.9, -0.313, -0.4)
+light_color = Color(1, 1, 0.854902, 1)
+light_energy = 5.0
+spot_range = 24.3671
+spot_angle = 23.9901
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Intro"
+libraries = {
+"": SubResource("AnimationLibrary_r07lb")
+}
