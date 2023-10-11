@@ -30,4 +30,5 @@ func start_phase(str):
 			get_tree().call_group("Trashbin", "make_useable")
 		"container":
 			get_tree().call_group("GUI", "update_MissionLabel", "Bring the trash to the container")
+			get_tree().call_group("Container", "activate_container")
 			get_tree().call_group("Container", "make_useable")
