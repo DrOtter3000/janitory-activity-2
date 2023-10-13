@@ -19,7 +19,6 @@ var noiseFootstep = 0.0
 var numberOfFootsteps = 3
 var running = false
 
-var has_flashlight = true
 var flashlight = false
 
 
@@ -47,7 +46,7 @@ func _process(delta):
 
 func check_flashlight_status():
 	if Input.is_action_just_pressed("flashlight"):
-		if has_flashlight:
+		if Gamestate.has_flashlight:
 			switch_flashlight()
 
 

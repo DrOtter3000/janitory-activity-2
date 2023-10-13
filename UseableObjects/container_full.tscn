@@ -1,7 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqpagonv3h8lx"]
+[gd_scene load_steps=12 format=3 uid="uid://bqpagonv3h8lx"]
 
 [ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_5iujr"]
 [ext_resource type="Script" path="res://UseableObjects/container_full.gd" id="2_crcsx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3entk"]
+size = Vector3(1.35325, 0.219329, 1.87012)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xeymo"]
 resource_name = "Material.001"
@@ -89,8 +92,9 @@ shadow_mesh = SubResource("ArrayMesh_ajj3r")
 [node name="ContainerFull" groups=["Container"] instance=ExtResource("1_5iujr")]
 script = ExtResource("2_crcsx")
 
-[node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21063, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104506, 0)
+shape = SubResource("BoxShape3D_3entk")
 
 [node name="Container" type="Node3D" parent="." index="1"]
 

@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bupxm4y2jnilp"]
+[gd_scene load_steps=5 format=3 uid="uid://bupxm4y2jnilp"]
 
 [ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_xt6yi"]
 [ext_resource type="Script" path="res://UseableObjects/Puke.gd" id="2_rwxgu"]
 [ext_resource type="PackedScene" uid="uid://85lgci2j3yf4" path="res://GFX/EnvironmentalStuff/Puke.glb" id="3_yy3tj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_au40k"]
+size = Vector3(0.244319, 0.219247, 0.343272)
+
 [node name="Puke" instance=ExtResource("1_xt6yi")]
 script = ExtResource("2_rwxgu")
 
-[node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000548422, 0)
-
-[node name="Puke" parent="." index="1" instance=ExtResource("3_yy3tj")]
+[node name="Puke" parent="." index="0" instance=ExtResource("3_yy3tj")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_au40k")

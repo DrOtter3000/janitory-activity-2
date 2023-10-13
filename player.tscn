@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://1jp41c7npvmj"]
+[gd_scene load_steps=7 format=3 uid="uid://1jp41c7npvmj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ckh1"]
-[ext_resource type="Material" uid="uid://3baaldmppf0l" path="res://GFX/Shaders/VHS_Shader.tres" id="2_4j0w1"]
 [ext_resource type="PackedScene" uid="uid://c4obgjuxe85lf" path="res://gui.tscn" id="3_g0but"]
+[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://VHS_Shader.tscn" id="4_6lbjv"]
 [ext_resource type="PackedScene" uid="uid://bsjpf7mj0vknw" path="res://mop_in_hand.tscn" id="4_rlg30"]
+[ext_resource type="PackedScene" uid="uid://cx1jadgq3ipsh" path="res://smartphone_in_hand.tscn" id="5_o2f5g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_533aj"]
 radius = 0.3
@@ -24,14 +25,7 @@ visible = false
 
 [node name="GUI" parent="Camera3D" instance=ExtResource("3_g0but")]
 
-[node name="ColorRect" type="ColorRect" parent="Camera3D"]
-material = ExtResource("2_4j0w1")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
+[node name="ColorRect" parent="Camera3D" instance=ExtResource("4_6lbjv")]
 
 [node name="Flashlight" type="SpotLight3D" parent="Camera3D"]
 light_energy = 0.0
@@ -39,6 +33,10 @@ shadow_enabled = true
 
 [node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -3)
+collide_with_areas = true
+
+[node name="SmartphoneInHand" parent="Camera3D" instance=ExtResource("5_o2f5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.105646)
 
 [node name="GroundDetectionRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203024, 0)

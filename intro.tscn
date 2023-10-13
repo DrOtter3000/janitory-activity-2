@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://gjed4vkb5e0c"]
+[gd_scene load_steps=19 format=3 uid="uid://gjed4vkb5e0c"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_hpy1h"]
 [ext_resource type="Material" uid="uid://bes01inukpdhc" path="res://GFX/Materials/Concrete_Ground.tres" id="1_xov14"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bl8xjw0xhrxfv" path="res://GFX/Trees/fir_4.glb" id="6_8utla"]
 [ext_resource type="PackedScene" uid="uid://1ffr8351gqup" path="res://GFX/Trees/fir_5.glb" id="7_0kww5"]
 [ext_resource type="PackedScene" uid="uid://1rxealr72wid" path="res://GFX/Trees/fir_6.glb" id="8_2ww6r"]
+[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://VHS_Shader.tscn" id="10_x2raq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qqfgs"]
 sky_top_color = Color(0.0745098, 0.0941176, 0.176471, 1)
@@ -255,7 +256,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494946, 0.553194, 0)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.49012e-08, 0.417863, -0.402807)
 
 [node name="Camera3D" type="Camera3D" parent="Car/Driver"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ColorRect" parent="Car/Driver/Camera3D" instance=ExtResource("10_x2raq")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Car"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.89978, -0.313, 0.4)

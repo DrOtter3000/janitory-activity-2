@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlhihs7kbk5ob"]
+
+[ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_fw020"]
+[ext_resource type="Script" path="res://UseableObjects/Flashlight.gd" id="2_whqqr"]
+[ext_resource type="PackedScene" uid="uid://byhorhtrqea7i" path="res://GFX/Enterior/Flashlight.glb" id="3_gii1k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebbs1"]
+size = Vector3(0.139335, 0.39448, 0.130886)
+
+[node name="Flashlight" instance=ExtResource("1_fw020")]
+script = ExtResource("2_whqqr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00162613, -0.00209963, 0.000702024)
+shape = SubResource("BoxShape3D_ebbs1")
+
+[node name="Flashlight" parent="." index="1" instance=ExtResource("3_gii1k")]

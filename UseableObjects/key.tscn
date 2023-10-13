@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba28qce04dfn4"]
+
+[ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_lnhmk"]
+[ext_resource type="PackedScene" uid="uid://dv8woghnpvkdl" path="res://GFX/EnvironmentalStuff/Key.glb" id="2_trflp"]
+
+[sub_resource type="GDScript" id="GDScript_dwffm"]
+script/source = "extends \"res://UseableObjects/Useable.gd\"
+
+
+# Called when the node enters the scene tree for the first time.
+func use():
+	Gamestate.has_keys = true
+	queue_free()
+
+func update_gui():
+	get_tree().call_group(\"GUI\", \"update_ActivityLabel\", \"(E)Pick Up\")
+
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2i0sf"]
+size = Vector3(0.226115, 0.181522, 0.270847)
+
+[node name="Key" instance=ExtResource("1_lnhmk")]
+script = SubResource("GDScript_dwffm")
+
+[node name="Key" parent="." index="0" instance=ExtResource("2_trflp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_2i0sf")

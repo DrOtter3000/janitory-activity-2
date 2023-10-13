@@ -1,0 +1,177 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx1jadgq3ipsh"]
+
+[ext_resource type="PackedScene" uid="uid://bbv2jr8umqt10" path="res://GFX/EnvironmentalStuff/Smartphone.glb" id="1_8f734"]
+[ext_resource type="Script" path="res://smartphone_in_hand.gd" id="1_tnx3l"]
+
+[sub_resource type="Animation" id="Animation_fr4um"]
+resource_name = "TakePhone"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smartphone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.519045, -0.523996, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smartphone:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.486046, -0.773213, -0.44643), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smartphone:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6p675"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smartphone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smartphone:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smartphone:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jjqlw"]
+resource_name = "TakePhoneAway"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smartphone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.226104, -0.839021, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smartphone:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smartphone:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0989589, -0.435946, -0.208989)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gwkn0"]
+_data = {
+"RESET": SubResource("Animation_6p675"),
+"TakePhone": SubResource("Animation_fr4um"),
+"TakePhoneAway": SubResource("Animation_jjqlw")
+}
+
+[node name="SmartphoneInHand" type="Node3D"]
+script = ExtResource("1_tnx3l")
+
+[node name="Smartphone" parent="." instance=ExtResource("1_8f734")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="LblDingo" type="Label3D" parent="Smartphone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0639139, 0.00232299)
+pixel_size = 0.0003
+text = "Whiskey Dingo"
+font_size = 30
+
+[node name="LblBadText" type="Label3D" parent="Smartphone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0239021, -0.0668232, 0.00272171)
+visible = false
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "Hello cAretaker,
+Can yoU plase meet Me at the Ferris Wheel? It is reallY importanT. Please alSo bring yoUr tasty flesh aNd your soul... Your immoRtal, delici0us soul. We nEed to clarifY sometHing about Your empl0yment contRact. ImPortant: this is noT a trap, so pleaSe come unarMed. gr33tings,
+
+ Whisky Dingo"
+font_size = 48
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="LblGoodText" type="Label3D" parent="Smartphone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245012, 0.0551725, 0.00206516)
+visible = false
+pixel_size = 0.0001
+modulate = Color(0, 0, 0, 1)
+text = "Hello janitor, 
+
+If you haven't been to the theme park yet, don't go there. At the beginning of the month, in addition to the opening of the Halloween month, we also summoned a few demons that are now stuck in the animatronics. A special company is coming tomorrow to banish them. If you were in the park, it wouldn't be so bad. We don't know why, but the demons can be appeased by placing the following on the counter in the Dingoden: a pilk, a baguette and a parfait. Best regards,
+
+WhiskeyDingo"
+font_size = 37
+outline_size = 0
+horizontal_alignment = 0
+vertical_alignment = 0
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gwkn0")
+}

@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://rdtghabqyr4a"]
+[gd_scene load_steps=5 format=3 uid="uid://bu3aedbms2625"]
 
 [ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_hd1id"]
-[ext_resource type="Script" path="res://UseableObjects/mop_in_shed.gd" id="2_pgyc0"]
+[ext_resource type="Script" path="res://UseableObjects/mop_in_shed.gd" id="2_8ibit"]
 [ext_resource type="PackedScene" uid="uid://bf3c21i82mqey" path="res://GFX/EnvironmentalStuff/Mop.glb" id="3_ha6fe"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykoqf"]
+size = Vector3(0.398434, 3, 0.285042)
+
 [node name="MopInShed" instance=ExtResource("1_hd1id")]
-script = ExtResource("2_pgyc0")
+script = ExtResource("2_8ibit")
 
-[node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0099, 0)
+[node name="Mop" parent="." index="0" instance=ExtResource("3_ha6fe")]
 
-[node name="Mop" parent="." index="1" instance=ExtResource("3_ha6fe")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46747, 0)
+shape = SubResource("BoxShape3D_ykoqf")

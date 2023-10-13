@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0d5skuxrbi3d"]
+
+[ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_sifc1"]
+[ext_resource type="Script" path="res://UseableObjects/car.gd" id="2_dnlg6"]
+[ext_resource type="PackedScene" uid="uid://cyoerpnjc36pc" path="res://GFX/Enterior/Car.glb" id="2_qiw8m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxso2"]
+size = Vector3(3.5725, 1, 1.55686)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3njoi"]
+size = Vector3(1.04629, 1.43169, 0.131204)
+
+[node name="Car" instance=ExtResource("1_sifc1")]
+script = ExtResource("2_dnlg6")
+
+[node name="Car" parent="." index="0" instance=ExtResource("2_qiw8m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Car" index="9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_wxso2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0918565, 0, -0.792784)
+shape = SubResource("BoxShape3D_3njoi")

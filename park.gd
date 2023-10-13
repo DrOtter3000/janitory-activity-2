@@ -5,12 +5,13 @@ extends Node3D
 
 
 func _ready():
+	Gamestate.at_home = false
+	Gamestate.has_flashlight = true
 	start_phase("mop")
 
 
 func _process(delta):
 	pass
-			
 
 
 func spawn_enemy():

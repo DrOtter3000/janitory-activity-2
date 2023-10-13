@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hlhqw7ytw2a6"]
+[gd_scene load_steps=12 format=3 uid="uid://hlhqw7ytw2a6"]
 
 [ext_resource type="Script" path="res://UseableObjects/TrashBin.gd" id="1_cc1i2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ug058"]
-size = Vector3(0.501969, 1.20379, 0.436664)
+size = Vector3(0.370348, 0.283681, 0.436664)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rmm55"]
 resource_name = "Material.001"
@@ -90,6 +90,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hwu3v")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_toqel"]
+size = Vector3(1.92804, 1.97584, 1.87764)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wyee"]
 resource_name = "Material.003"
 cull_mode = 2
@@ -152,10 +155,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6hinw")
 
-[node name="TrashBin" type="StaticBody3D" groups=["Trashbin"]]
+[node name="TrashBin" type="Area3D" groups=["Trashbin"]]
 script = ExtResource("1_cc1i2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.377941, 0)
 shape = SubResource("BoxShape3D_ug058")
 
 [node name="Trashbin" type="Node3D" parent="."]
@@ -164,6 +168,11 @@ shape = SubResource("BoxShape3D_ug058")
 transform = Transform3D(0.25, 0, 0, 0, 0.6, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_hdpuc")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Trashbin/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trashbin/Cube/StaticBody3D"]
+shape = SubResource("BoxShape3D_toqel")
 
 [node name="Plane" type="MeshInstance3D" parent="Trashbin"]
 transform = Transform3D(0.24, 0, 0, 0, 1, 0, 0, 0, 0.19, 0, 0.268978, 0)

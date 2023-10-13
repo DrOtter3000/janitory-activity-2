@@ -1,12 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3s0hscphsgpm"]
+[gd_scene load_steps=2 format=3 uid="uid://d3s0hscphsgpm"]
 
 [ext_resource type="Script" path="res://UseableObjects/Useable.gd" id="1_11j3b"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ug058"]
-size = Vector3(1.34909, 0.387399, 1.79799)
-
-[node name="Useable" type="StaticBody3D"]
+[node name="Useable" type="Area3D"]
 script = ExtResource("1_11j3b")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ug058")
