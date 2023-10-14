@@ -1,0 +1,800 @@
+[gd_scene load_steps=25 format=3 uid="uid://crymybdlmlgv6"]
+
+[ext_resource type="Script" path="res://outro.gd" id="1_afmqa"]
+[ext_resource type="Material" uid="uid://bes01inukpdhc" path="res://GFX/Materials/Concrete_Ground.tres" id="2_s4g8a"]
+[ext_resource type="Material" uid="uid://blqba42x4xbr3" path="res://GFX/Materials/Grass.tres" id="2_svr5i"]
+[ext_resource type="PackedScene" uid="uid://cybdgg83xlhxi" path="res://GFX/Trees/fir_1.glb" id="3_ss1hb"]
+[ext_resource type="PackedScene" uid="uid://bllnfip3ouavx" path="res://GFX/Trees/fir_2.glb" id="4_vvsnc"]
+[ext_resource type="PackedScene" uid="uid://k675hm2vkrpm" path="res://GFX/Trees/fir_3.glb" id="5_rnl73"]
+[ext_resource type="PackedScene" uid="uid://bl8xjw0xhrxfv" path="res://GFX/Trees/fir_4.glb" id="6_apq3d"]
+[ext_resource type="PackedScene" uid="uid://1ffr8351gqup" path="res://GFX/Trees/fir_5.glb" id="7_mj7gt"]
+[ext_resource type="PackedScene" uid="uid://1rxealr72wid" path="res://GFX/Trees/fir_6.glb" id="8_6w4ps"]
+[ext_resource type="PackedScene" uid="uid://cyoerpnjc36pc" path="res://GFX/Enterior/Car.glb" id="9_sl7f6"]
+[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://VHS_Shader.tscn" id="10_fmhlu"]
+[ext_resource type="AudioStream" uid="uid://b8ki0cil05da0" path="res://SFX/Effects/car_engine.mp3" id="11_c1c73"]
+[ext_resource type="AudioStream" uid="uid://buie26a065u8r" path="res://SFX/Effects/truck-door-closed.wav" id="12_3fgsd"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="12_ow3oi"]
+[ext_resource type="AudioStream" uid="uid://bhybvcukmiksi" path="res://SFX/Radio/Angst vorm Haus.mp3" id="14_elmhn"]
+[ext_resource type="AudioStream" uid="uid://duxqtoi57442u" path="res://SFX/Radio/News 2.wav" id="15_u75dp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qqfgs"]
+sky_top_color = Color(0.0745098, 0.0941176, 0.176471, 1)
+sky_horizon_color = Color(0.556863, 0.555882, 0.568627, 1)
+ground_bottom_color = Color(0.152941, 0.129412, 0.0980392, 1)
+ground_horizon_color = Color(0.556863, 0.555882, 0.568627, 1)
+
+[sub_resource type="Sky" id="Sky_1j5e2"]
+sky_material = SubResource("ProceduralSkyMaterial_qqfgs")
+
+[sub_resource type="Environment" id="Environment_vkpqx"]
+background_mode = 2
+sky = SubResource("Sky_1j5e2")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_emission = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rbjc2"]
+size = Vector3(600, 1, 2400)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bmcxu"]
+material = ExtResource("2_s4g8a")
+size = Vector3(8, 1, 2400)
+
+[sub_resource type="Animation" id="Animation_pco0x"]
+resource_name = "Intro"
+length = 240.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CarSounds:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 41.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CarSounds:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_c1c73")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Car/Driver/Camera3D/ColorRect2:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.1, 229.9, 235),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Car:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 235),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.675, 0.905, 6773.07), Vector3(1.675, 0.905, 425.148)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Radio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 17.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Radio:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 17.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("15_u75dp"), ExtResource("14_elmhn")]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(240),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"back_to_menu"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0bane"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CarSounds:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CarSounds:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_3fgsd")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Car/Driver/Camera3D/ColorRect2:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Car:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.67489, 0.904775, 6773.07)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Radio:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Radio:stream")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_u75dp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r07lb"]
+_data = {
+"Intro": SubResource("Animation_pco0x"),
+"RESET": SubResource("Animation_0bane")
+}
+
+[node name="Outro" type="Node3D"]
+script = ExtResource("1_afmqa")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vkpqx")
+
+[node name="Street" type="Node3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Street"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 1001.97)
+mesh = SubResource("BoxMesh_rbjc2")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_svr5i")
+
+[node name="Street" type="MeshInstance3D" parent="Street/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -1.56)
+mesh = SubResource("BoxMesh_bmcxu")
+skeleton = NodePath("../../..")
+
+[node name="Trees" type="Node3D" parent="Street/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, -1001.97)
+
+[node name="fir_1" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0082, 2.45108, 83.6238)
+
+[node name="fir_7" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7113, 2.45108, 330.462)
+
+[node name="fir_8" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 330.462)
+
+[node name="fir_9" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 485.106)
+
+[node name="fir_10" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.576, 2.45108, 485.106)
+
+[node name="fir_11" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1051, 2.45108, 746.104)
+
+[node name="fir_12" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -220.752, 2.45108, 746.104)
+
+[node name="fir_13" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 905.618)
+
+[node name="fir_14" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 1096.66)
+
+[node name="fir_15" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.413, 2.45108, 1096.66)
+
+[node name="fir_16" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.815, 2.45108, 983.476)
+
+[node name="fir_17" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3975, 2.45108, 1261.95)
+
+[node name="fir_18" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.4997, 2.45108, 1454.97)
+
+[node name="fir_19" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1214, 2.45108, 1454.97)
+
+[node name="fir_20" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1599.72)
+
+[node name="fir_21" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1765.99)
+
+[node name="fir_27" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.7712, 2.45108, 1858.38)
+
+[node name="fir_28" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9642, 2.45108, 1675.35)
+
+[node name="fir_29" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1553.54)
+
+[node name="fir_30" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1335.96)
+
+[node name="fir_31" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3115, 2.45108, 1335.96)
+
+[node name="fir_22" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9337, 2.45108, 1939.63)
+
+[node name="fir_23" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.1276, 2.45108, 2049.33)
+
+[node name="fir_24" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2805, 2.45108, 2034.71)
+
+[node name="fir_25" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.082, 2.45108, 2120.5)
+
+[node name="fir_26" parent="Street/Ground/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.378, 2.45108, 2120.5)
+
+[node name="fir_2" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4732, 1.4685, 172.954)
+
+[node name="fir_32" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3498, 1.4685, 399.723)
+
+[node name="fir_33" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9747, 1.4685, 399.723)
+
+[node name="fir_34" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 530.363)
+
+[node name="fir_35" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 707.98)
+
+[node name="fir_36" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.645, 1.4685, 640.199)
+
+[node name="fir_37" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.782, 1.4685, 624.771)
+
+[node name="fir_38" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5648, 1.4685, 915.926)
+
+[node name="fir_39" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1907, 1.4685, 1013.95)
+
+[node name="fir_40" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1013.95)
+
+[node name="fir_41" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1252.01)
+
+[node name="fir_42" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1252.01)
+
+[node name="fir_43" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1514.88)
+
+[node name="fir_44" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1514.88)
+
+[node name="fir_45" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1776.98)
+
+[node name="fir_46" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.568, 1.4685, 1698.76)
+
+[node name="fir_47" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.6583, 1.4685, 1698.76)
+
+[node name="fir_48" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1651.37)
+
+[node name="fir_49" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1961.24)
+
+[node name="fir_50" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1013, 1.4685, 2149.84)
+
+[node name="fir_51" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9449, 1.4685, 1417.21)
+
+[node name="fir_52" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.566, 1.4685, 1018.13)
+
+[node name="fir_53" parent="Street/Ground/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8258, 1.4685, 1102.38)
+
+[node name="fir_3" parent="Street/Ground/Trees" instance=ExtResource("5_rnl73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2159, 4.29695, 5.14988)
+
+[node name="fir_4" parent="Street/Ground/Trees" instance=ExtResource("6_apq3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4706, 3.19889, 3.91144)
+
+[node name="fir_5" parent="Street/Ground/Trees" instance=ExtResource("7_mj7gt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1382, 4.06754, 41.3701)
+
+[node name="fir_6" parent="Street/Ground/Trees" instance=ExtResource("8_6w4ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7727, 2.94069, 9.06417)
+
+[node name="Ground2" type="MeshInstance3D" parent="Street"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 3399.32)
+mesh = SubResource("BoxMesh_rbjc2")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_svr5i")
+
+[node name="Street" type="MeshInstance3D" parent="Street/Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -1.56)
+mesh = SubResource("BoxMesh_bmcxu")
+skeleton = NodePath("../../..")
+
+[node name="Trees" type="Node3D" parent="Street/Ground2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, -1001.97)
+
+[node name="fir_1" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0082, 2.45108, 83.6238)
+
+[node name="fir_7" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7113, 2.45108, 330.462)
+
+[node name="fir_8" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 330.462)
+
+[node name="fir_9" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 485.106)
+
+[node name="fir_10" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.576, 2.45108, 485.106)
+
+[node name="fir_11" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1051, 2.45108, 746.104)
+
+[node name="fir_12" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -220.752, 2.45108, 746.104)
+
+[node name="fir_13" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 905.618)
+
+[node name="fir_14" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 1096.66)
+
+[node name="fir_15" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.413, 2.45108, 1096.66)
+
+[node name="fir_16" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.815, 2.45108, 983.476)
+
+[node name="fir_17" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3975, 2.45108, 1261.95)
+
+[node name="fir_18" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.4997, 2.45108, 1454.97)
+
+[node name="fir_19" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1214, 2.45108, 1454.97)
+
+[node name="fir_20" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1599.72)
+
+[node name="fir_21" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1765.99)
+
+[node name="fir_27" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.7712, 2.45108, 1858.38)
+
+[node name="fir_28" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9642, 2.45108, 1675.35)
+
+[node name="fir_29" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1553.54)
+
+[node name="fir_30" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1335.96)
+
+[node name="fir_31" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3115, 2.45108, 1335.96)
+
+[node name="fir_22" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9337, 2.45108, 1939.63)
+
+[node name="fir_23" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.1276, 2.45108, 2049.33)
+
+[node name="fir_24" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2805, 2.45108, 2034.71)
+
+[node name="fir_25" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.082, 2.45108, 2120.5)
+
+[node name="fir_26" parent="Street/Ground2/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.378, 2.45108, 2120.5)
+
+[node name="fir_2" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4732, 1.4685, 172.954)
+
+[node name="fir_32" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3498, 1.4685, 399.723)
+
+[node name="fir_33" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9747, 1.4685, 399.723)
+
+[node name="fir_34" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 530.363)
+
+[node name="fir_35" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 707.98)
+
+[node name="fir_36" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.645, 1.4685, 640.199)
+
+[node name="fir_37" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.782, 1.4685, 624.771)
+
+[node name="fir_38" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5648, 1.4685, 915.926)
+
+[node name="fir_39" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1907, 1.4685, 1013.95)
+
+[node name="fir_40" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1013.95)
+
+[node name="fir_41" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1252.01)
+
+[node name="fir_42" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1252.01)
+
+[node name="fir_43" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1514.88)
+
+[node name="fir_44" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1514.88)
+
+[node name="fir_45" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1776.98)
+
+[node name="fir_46" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.568, 1.4685, 1698.76)
+
+[node name="fir_47" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.6583, 1.4685, 1698.76)
+
+[node name="fir_48" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1651.37)
+
+[node name="fir_49" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1961.24)
+
+[node name="fir_50" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1013, 1.4685, 2149.84)
+
+[node name="fir_51" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9449, 1.4685, 1417.21)
+
+[node name="fir_52" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.566, 1.4685, 1018.13)
+
+[node name="fir_53" parent="Street/Ground2/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8258, 1.4685, 1102.38)
+
+[node name="fir_3" parent="Street/Ground2/Trees" instance=ExtResource("5_rnl73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2159, 4.29695, 5.14988)
+
+[node name="fir_4" parent="Street/Ground2/Trees" instance=ExtResource("6_apq3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4706, 3.19889, 3.91144)
+
+[node name="fir_5" parent="Street/Ground2/Trees" instance=ExtResource("7_mj7gt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1382, 4.06754, 41.3701)
+
+[node name="fir_6" parent="Street/Ground2/Trees" instance=ExtResource("8_6w4ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7727, 2.94069, 9.06417)
+
+[node name="Ground3" type="MeshInstance3D" parent="Street"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 5782.35)
+mesh = SubResource("BoxMesh_rbjc2")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_svr5i")
+
+[node name="Street" type="MeshInstance3D" parent="Street/Ground3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -1.56)
+mesh = SubResource("BoxMesh_bmcxu")
+skeleton = NodePath("../../..")
+
+[node name="Trees" type="Node3D" parent="Street/Ground3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, -1001.97)
+
+[node name="fir_1" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0082, 2.45108, 83.6238)
+
+[node name="fir_7" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7113, 2.45108, 330.462)
+
+[node name="fir_8" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 330.462)
+
+[node name="fir_9" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5624, 2.45108, 485.106)
+
+[node name="fir_10" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.576, 2.45108, 485.106)
+
+[node name="fir_11" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1051, 2.45108, 746.104)
+
+[node name="fir_12" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -220.752, 2.45108, 746.104)
+
+[node name="fir_13" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 905.618)
+
+[node name="fir_14" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.1805, 2.45108, 1096.66)
+
+[node name="fir_15" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.413, 2.45108, 1096.66)
+
+[node name="fir_16" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.815, 2.45108, 983.476)
+
+[node name="fir_17" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3975, 2.45108, 1261.95)
+
+[node name="fir_18" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.4997, 2.45108, 1454.97)
+
+[node name="fir_19" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1214, 2.45108, 1454.97)
+
+[node name="fir_20" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1599.72)
+
+[node name="fir_21" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.2066, 2.45108, 1765.99)
+
+[node name="fir_27" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.7712, 2.45108, 1858.38)
+
+[node name="fir_28" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9642, 2.45108, 1675.35)
+
+[node name="fir_29" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1553.54)
+
+[node name="fir_30" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1293, 2.45108, 1335.96)
+
+[node name="fir_31" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3115, 2.45108, 1335.96)
+
+[node name="fir_22" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9337, 2.45108, 1939.63)
+
+[node name="fir_23" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.1276, 2.45108, 2049.33)
+
+[node name="fir_24" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2805, 2.45108, 2034.71)
+
+[node name="fir_25" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.082, 2.45108, 2120.5)
+
+[node name="fir_26" parent="Street/Ground3/Trees" instance=ExtResource("3_ss1hb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.378, 2.45108, 2120.5)
+
+[node name="fir_2" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4732, 1.4685, 172.954)
+
+[node name="fir_32" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3498, 1.4685, 399.723)
+
+[node name="fir_33" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9747, 1.4685, 399.723)
+
+[node name="fir_34" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 530.363)
+
+[node name="fir_35" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0822, 1.4685, 707.98)
+
+[node name="fir_36" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.645, 1.4685, 640.199)
+
+[node name="fir_37" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.782, 1.4685, 624.771)
+
+[node name="fir_38" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5648, 1.4685, 915.926)
+
+[node name="fir_39" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1907, 1.4685, 1013.95)
+
+[node name="fir_40" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1013.95)
+
+[node name="fir_41" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212.386, 1.4685, 1252.01)
+
+[node name="fir_42" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1252.01)
+
+[node name="fir_43" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.685, 1.4685, 1514.88)
+
+[node name="fir_44" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1514.88)
+
+[node name="fir_45" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9744, 1.4685, 1776.98)
+
+[node name="fir_46" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.568, 1.4685, 1698.76)
+
+[node name="fir_47" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.6583, 1.4685, 1698.76)
+
+[node name="fir_48" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1651.37)
+
+[node name="fir_49" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7228, 1.4685, 1961.24)
+
+[node name="fir_50" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1013, 1.4685, 2149.84)
+
+[node name="fir_51" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9449, 1.4685, 1417.21)
+
+[node name="fir_52" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.566, 1.4685, 1018.13)
+
+[node name="fir_53" parent="Street/Ground3/Trees" instance=ExtResource("4_vvsnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8258, 1.4685, 1102.38)
+
+[node name="fir_3" parent="Street/Ground3/Trees" instance=ExtResource("5_rnl73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2159, 4.29695, 5.14988)
+
+[node name="fir_4" parent="Street/Ground3/Trees" instance=ExtResource("6_apq3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4706, 3.19889, 3.91144)
+
+[node name="fir_5" parent="Street/Ground3/Trees" instance=ExtResource("7_mj7gt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1382, 4.06754, 41.3701)
+
+[node name="fir_6" parent="Street/Ground3/Trees" instance=ExtResource("8_6w4ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7727, 2.94069, 9.06417)
+
+[node name="Car" parent="." instance=ExtResource("9_sl7f6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.67489, 0.904775, 6773.07)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Car"]
+
+[node name="Driver" type="Node3D" parent="Car"]
+transform = Transform3D(-0.115873, 0, -0.993264, 0, 1, 0, 0.993264, 0, -0.115873, 0, 0.337121, -0.424216)
+
+[node name="Camera3D" type="Camera3D" parent="Car/Driver"]
+
+[node name="ColorRect" parent="Car/Driver/Camera3D" instance=ExtResource("10_fmhlu")]
+
+[node name="ColorRect2" type="ColorRect" parent="Car/Driver/Camera3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Car/Driver/Camera3D"]
+script = ExtResource("12_ow3oi")
+
+[node name="Label" type="Label" parent="Car/Driver/Camera3D/Sprite2D"]
+offset_left = 448.0
+offset_top = 272.0
+offset_right = 681.0
+offset_bottom = 584.0
+text = "Lorem Ipsum dolor silit ametg
+asdfkjölajsdf
+sdafösalödfjöladsfjka
+lasdfjlösdafjölasdfk
+sadökolfjölsadjflöasdölkfj
+ösldflösadjfasdklöfj
+asdölfkjlsöadfjasdölfkj
+öaolsdfjölksdafjösladkfj
+löaskdfjöolasdkfjlsdfköj
+alösdkfjsdflkjasdfölkj
+aösldfkjölsdakfjasdölfkj
+öasdolfkjsöadlkfjasdölkfj"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.05, 0, 0.691)
+spot_range = 25.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.05, 0, -0.691)
+spot_range = 25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Intro"
+libraries = {
+"": SubResource("AnimationLibrary_r07lb")
+}
+
+[node name="CarSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_3fgsd")
+
+[node name="Radio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_u75dp")

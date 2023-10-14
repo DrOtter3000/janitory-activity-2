@@ -7,8 +7,11 @@ var full = true
 
 
 func use():
-	if Gamestate.at_home and Gamestate.has_keys:
+	if Gamestate.sacrified_goods:
+		print("winner")
+	elif Gamestate.at_home and Gamestate.has_keys:
 		get_tree().change_scene_to_file("res://intro.tscn")
+		
 		
 
 

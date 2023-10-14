@@ -17,6 +17,9 @@ func _input(event):
 		if Gamestate.smartphone_equiped == 0:
 			if Gamestate.trap_active: 
 				get_tree().call_group("Park", "start_phase", "into_the_trap")
+				change_useable_status()
+			else:
+				get_tree().call_group("Park", "start_phase", "haunting")
 
 		if in_FOV:
 			$AnimationPlayer.play("TakePhoneAway")

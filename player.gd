@@ -40,6 +40,14 @@ func _process(delta):
 		interactor.update_gui()
 		if Input.is_action_just_pressed("interact"):
 			interactor.use()
+	elif interactor != null and interactor.name == "AltarArea" and Gamestate.ready_to_sacrify:
+		if Gamestate.has_baguette and Gamestate.has_pilk and Gamestate.has_parfait:
+			get_tree().call_group("GUI", "update_ActivityLabel", "(E)Sacrifice")
+			if Input.is_action_just_pressed("interact"):
+				#TODO: Cool Effects
+				Gamestate.ready_to_sacrify = false
+				Gamestate.sacrified_goods = true
+				get_tree().call_group("Park", "start_phase", "escape")
 	else:
 		get_tree().call_group("GUI", "update_ActivityLabel", "")
 

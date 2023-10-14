@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4tmm2lx5e8wb"]
+
+[ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_j1kkr"]
+[ext_resource type="Script" path="res://UseableObjects/BaguetteUseable.gd" id="2_1foos"]
+[ext_resource type="PackedScene" uid="uid://blojit4fwcik7" path="res://GFX/EnvironmentalStuff/Baguette.glb" id="3_mmfn5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77ri3"]
+size = Vector3(0.585369, 0.0856168, 0.0831902)
+
+[node name="BaguetteUseable" instance=ExtResource("1_j1kkr")]
+visible = false
+script = ExtResource("2_1foos")
+
+[node name="Baguette" parent="." index="0" instance=ExtResource("3_mmfn5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_77ri3")

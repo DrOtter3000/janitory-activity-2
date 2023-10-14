@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://mttysonftfc5"]
+
+[ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_7fc2s"]
+[ext_resource type="Script" path="res://UseableObjects/parfait_useable.gd" id="2_qw28x"]
+[ext_resource type="PackedScene" uid="uid://v4dt10pkjk5w" path="res://GFX/EnvironmentalStuff/Parfait.glb" id="3_7hakk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0681"]
+size = Vector3(0.133906, 0.115807, 0.314664)
+
+[node name="ParfaitUseable" instance=ExtResource("1_7fc2s")]
+script = ExtResource("2_qw28x")
+
+[node name="Parfait" parent="." index="0" instance=ExtResource("3_7hakk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_c0681")
+
+[editable path="Parfait"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://kgvcfixtov6x"]
+[gd_scene load_steps=28 format=3 uid="uid://kgvcfixtov6x"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_vwkjn"]
 
@@ -408,6 +408,9 @@ _data = {
 "search_mode": SubResource("Animation_tqfqb")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_y6dyf"]
+radius = 10.9689
+
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_vwkjn")
 
@@ -482,4 +485,10 @@ libraries = {
 wait_time = 5.0
 one_shot = true
 
+[node name="DialogueArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueArea"]
+shape = SubResource("SphereShape3D_y6dyf")
+
 [connection signal="timeout" from="HauntingTimer" to="." method="_on_haunting_timer_timeout"]
+[connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdlu7s3ffmqta"]
+
+[ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_w8li2"]
+[ext_resource type="Script" path="res://UseableObjects/Pilk_useable.gd" id="2_dwogc"]
+[ext_resource type="PackedScene" uid="uid://bhhpl6evbkf5t" path="res://GFX/EnvironmentalStuff/Drink.glb" id="3_qkwsu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h3yb2"]
+size = Vector3(0.139876, 0.274713, 0.169518)
+
+[node name="Pilk_useable" instance=ExtResource("1_w8li2")]
+visible = false
+script = ExtResource("2_dwogc")
+
+[node name="Drink" parent="." index="0" instance=ExtResource("3_qkwsu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_h3yb2")
