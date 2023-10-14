@@ -1,0 +1,519 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8gkis5yl2cff"]
+
+[ext_resource type="PackedScene" uid="uid://c3xumtpxwf5i" path="res://GFX/EnvironmentalStuff/Fence_inner.glb" id="1_cvowv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mxvu"]
+size = Vector3(0.0935271, 2.02203, 2.08675)
+
+[node name="InnerFence" type="Node3D"]
+
+[node name="Fence_inner" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -80.6582, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner2" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -78.5959, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner3" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -76.5395, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner4" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -74.4771, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner5" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -72.4065, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner6" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -70.3442, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner7" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -68.2878, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner8" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -66.2255, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner9" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -64.1869, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner10" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -62.1246, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner18" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.5985, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner18/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner19" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -43.533, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner19/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner20" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -41.548, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner20/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner21" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -46.1098)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner22" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -48.1305)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner23" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -50.148)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner23/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner24" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -52.1791)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner24/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner25" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -54.2148)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner25/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner26" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -56.2681)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner26/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner27" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -58.2888)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner27/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner28" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -60.3062)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner28/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner29" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -62.3374)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner29/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner30" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -64.3731)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner30/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner31" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -66.4195)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner31/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner32" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -68.4402)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner32/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner33" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -70.4576)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner33/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner34" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -72.4888)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner34/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner35" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -74.5245)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner35/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner36" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -76.528)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner36/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner37" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -78.5487)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner37"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner37/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner38" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -80.5662)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner38"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner38/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner39" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -82.5973)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner39"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner39/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner40" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -84.633)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner40"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner40/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner41" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -86.6467)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner41"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner41/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner42" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -88.6674)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner42"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner42/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner43" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -90.6849)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner43"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner43/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner44" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -92.716)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner44"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner44/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner45" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -94.7517)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner45"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner45/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner46" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -96.7603)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner46"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner46/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner47" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -98.781)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner47/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner48" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -100.798)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner48"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner48/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner49" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -102.83)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner49"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner49/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner50" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -104.865)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner50"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner50/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner51" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -106.83)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner51"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner51/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner52" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -40.5491, 0, -108.851)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner52"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner52/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner11" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -60.0682, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner12" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -58.0058, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner13" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -55.9352, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner13/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner14" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.8729, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner15" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -51.8165, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[node name="Fence_inner16" parent="." instance=ExtResource("1_cvowv")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.7542, 0, -45.112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence_inner16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence_inner16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03197, 0)
+shape = SubResource("BoxShape3D_3mxvu")
+
+[editable path="Fence_inner"]
+[editable path="Fence_inner2"]
+[editable path="Fence_inner3"]
+[editable path="Fence_inner4"]
+[editable path="Fence_inner5"]
+[editable path="Fence_inner6"]
+[editable path="Fence_inner7"]
+[editable path="Fence_inner8"]
+[editable path="Fence_inner9"]
+[editable path="Fence_inner10"]
+[editable path="Fence_inner18"]
+[editable path="Fence_inner19"]
+[editable path="Fence_inner20"]
+[editable path="Fence_inner21"]
+[editable path="Fence_inner22"]
+[editable path="Fence_inner23"]
+[editable path="Fence_inner24"]
+[editable path="Fence_inner25"]
+[editable path="Fence_inner26"]
+[editable path="Fence_inner27"]
+[editable path="Fence_inner28"]
+[editable path="Fence_inner29"]
+[editable path="Fence_inner30"]
+[editable path="Fence_inner31"]
+[editable path="Fence_inner32"]
+[editable path="Fence_inner33"]
+[editable path="Fence_inner34"]
+[editable path="Fence_inner35"]
+[editable path="Fence_inner36"]
+[editable path="Fence_inner37"]
+[editable path="Fence_inner38"]
+[editable path="Fence_inner39"]
+[editable path="Fence_inner40"]
+[editable path="Fence_inner41"]
+[editable path="Fence_inner42"]
+[editable path="Fence_inner43"]
+[editable path="Fence_inner44"]
+[editable path="Fence_inner45"]
+[editable path="Fence_inner46"]
+[editable path="Fence_inner47"]
+[editable path="Fence_inner48"]
+[editable path="Fence_inner49"]
+[editable path="Fence_inner50"]
+[editable path="Fence_inner51"]
+[editable path="Fence_inner52"]
+[editable path="Fence_inner11"]
+[editable path="Fence_inner12"]
+[editable path="Fence_inner13"]
+[editable path="Fence_inner14"]
+[editable path="Fence_inner15"]
+[editable path="Fence_inner16"]

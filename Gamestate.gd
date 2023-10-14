@@ -7,6 +7,7 @@ var sacrified_goods = false
 
 var has_flashlight = false
 var trap_active = true
+var smartphone_equiped = 0
 
 
 var has_mop = false

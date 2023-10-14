@@ -11,7 +11,7 @@ func _process(delta):
 
 func use():
 	if ready_to_use and not Gamestate.container_used:
-		get_tree().call_group("Park", "spawn_enemy")
+		get_tree().call_group("Park", "start_phase", "message_1")
 		Gamestate.container_used = true
 
 

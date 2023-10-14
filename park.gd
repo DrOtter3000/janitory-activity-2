@@ -33,3 +33,10 @@ func start_phase(str):
 			get_tree().call_group("GUI", "update_MissionLabel", "Bring the trash to the container")
 			get_tree().call_group("Container", "activate_container")
 			get_tree().call_group("Container", "make_useable")
+		"message_1":
+			get_tree().call_group("GUI", "update_MissionLabel", "Press (E) to answer your phone")
+			get_tree().call_group("Phone", "change_useable_status")
+			Gamestate.smartphone_equiped = 2
+		"into_the_trap":
+			get_tree().call_group("GUI", "update_MissionLabel", "Meet Whiskey Dingo at the ferris wheel")
+			spawn_enemy()

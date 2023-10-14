@@ -30,6 +30,8 @@ visible = false
 [node name="Flashlight" type="SpotLight3D" parent="Camera3D"]
 light_energy = 0.0
 shadow_enabled = true
+spot_range = 22.0
+spot_angle = 32.2714
 
 [node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -3)
