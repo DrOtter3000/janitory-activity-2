@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var speed = 5
+var speed = 4.9
 
 var status = "patrol"
 var haunting = true
@@ -22,11 +22,11 @@ func _ready():
 
 func _process(delta):
 	if Gamestate.on_the_hunt:
+		var player_position = get_tree().get_first_node_in_group("Player").position
 		match status:
 			"haunting":
 				speed = 5
 				$AnimationPlayer.play("RESET")
-				var player_position = get_tree().get_first_node_in_group("Player").position
 				var direction = Vector3()
 	
 				$Andre.look_at(player_position)
@@ -42,6 +42,7 @@ func _process(delta):
 				if $Andre/Head/LineOfSightRayCasts/RayCast3D.get_collider() != null:
 					if $Andre/Head/LineOfSightRayCasts/RayCast3D.get_collider().is_in_group("Player"):
 						lost_trail = false
+						get_tree().call_group("Enemies", "start_hunt")
 				else:
 					get_back_trail()
 
@@ -87,6 +88,10 @@ func look_for_player():
 
 func set_new_target_point():
 	patrol_point = list_of_patrol_points[randi_range(0, list_of_patrol_points.size()-1)]
+
+
+func start_hunt():
+	status = "haunting"
 
 
 func _on_haunting_timer_timeout():

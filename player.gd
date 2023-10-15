@@ -149,5 +149,5 @@ func drop_mop():
 
 
 func _on_regeneration_timer_timeout():
-	if stamina <= 100:
+	if stamina <= 150:
 		stamina += 1

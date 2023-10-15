@@ -23,11 +23,11 @@ func _ready():
 
 func _process(delta):
 	if Gamestate.on_the_hunt:
+		var player_position = get_tree().get_first_node_in_group("Player").position
 		match status:
 			"haunting":
-				speed = 5
+				speed = 4.9
 				$AnimationPlayer.play("RESET")
-				var player_position = get_tree().get_first_node_in_group("Player").position
 				var direction = Vector3()
 	
 				$Dingo.look_at(player_position)
@@ -84,6 +84,7 @@ func look_for_player():
 		if object_in_sight != null:
 			if object_in_sight.is_in_group("Player"):
 				status = "haunting"
+				get_tree().call_group("Enemies", "start_hunt")
 
 
 func set_new_target_point():
@@ -98,6 +99,10 @@ func get_back_trail():
 	if not lost_trail:
 		$HauntingTimer.start()
 	lost_trail = true
+
+
+func start_hunt():
+	status = "haunting"
 
 
 func _on_dialogue_area_body_entered(body):

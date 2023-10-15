@@ -196,6 +196,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o62al")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7yh0"]
+size = Vector3(0.47186, 0.901087, 0.996617)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_70ix5"]
 _surfaces = [{
 "aabb": AABB(-1.06342, -1, -1.00008, 3.94215, 2, 2.00008),
@@ -411,10 +414,7 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_y6dyf"]
 radius = 10.9689
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_i7yh0"]
-size = Vector3(0.47186, 0.901087, 0.996617)
-
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="CharacterBody3D" groups=["Enemies"]]
 script = ExtResource("1_vwkjn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -437,6 +437,13 @@ skeleton = NodePath("")
 transform = Transform3D(0.757576, -2.25775e-09, 0, -1.12888e-08, 0.146496, -0.193371, 0, 0.0386742, 0.732481, -0.22797, 1.05396, 0.528553)
 mesh = SubResource("ArrayMesh_upicn")
 skeleton = NodePath("")
+
+[node name="KillArea" type="Area3D" parent="Dingo/Cube_001"]
+transform = Transform3D(-2.19393e-05, 0, -6.06061, 0, 6.06061, 0, 6.06061, 0, -2.19393e-05, 0, -3.16446, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dingo/Cube_001/KillArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.48394)
+shape = SubResource("BoxShape3D_i7yh0")
 
 [node name="LineOfSightRayCasts" type="Node3D" parent="Dingo/Cube_001"]
 
@@ -493,12 +500,6 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueArea"]
 shape = SubResource("SphereShape3D_y6dyf")
 
-[node name="KillArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.48394)
-shape = SubResource("BoxShape3D_i7yh0")
-
+[connection signal="body_entered" from="Dingo/Cube_001/KillArea" to="." method="_on_kill_area_body_entered"]
 [connection signal="timeout" from="HauntingTimer" to="." method="_on_haunting_timer_timeout"]
 [connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]
-[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

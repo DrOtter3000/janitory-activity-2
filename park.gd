@@ -2,9 +2,7 @@ extends Node3D
 
 
 @export var new_enemy : PackedScene
-@export var new_baguette : PackedScene
-@export var new_parfait : PackedScene
-@export var new_pilk : PackedScene
+@export var new_enemy2 : PackedScene
 
 
 func _ready():
@@ -25,6 +23,12 @@ func spawn_enemy():
 	var enemy = new_enemy.instantiate() as Node3D
 	add_child(enemy)
 	enemy.global_position = $EnemySpawnLocation.position
+
+
+func spawn_enemy2():
+	var enemy = new_enemy2.instantiate() as Node3D
+	add_child(enemy)
+	enemy.global_position = $Enemy2SpawnLocation.position
 
 
 func start_phase(phase):
@@ -61,6 +65,7 @@ func start_phase(phase):
 			get_tree().call_group("Phone", "change_useable_status")
 			Gamestate.smartphone_equiped = 2
 		"haunting":
+			spawn_enemy2()
 			Gamestate.in_call = false
 			Gamestate.on_the_hunt = true
 			get_tree().call_group("GUI", "update_MissionLabel", "Get Pilk, Baguette and Parfait... But don't get caught")
