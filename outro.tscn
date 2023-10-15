@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://crymybdlmlgv6"]
+[gd_scene load_steps=26 format=3 uid="uid://crymybdlmlgv6"]
 
 [ext_resource type="Script" path="res://outro.gd" id="1_afmqa"]
 [ext_resource type="Material" uid="uid://bes01inukpdhc" path="res://GFX/Materials/Concrete_Ground.tres" id="2_s4g8a"]
@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://1ffr8351gqup" path="res://GFX/Trees/fir_5.glb" id="7_mj7gt"]
 [ext_resource type="PackedScene" uid="uid://1rxealr72wid" path="res://GFX/Trees/fir_6.glb" id="8_6w4ps"]
 [ext_resource type="PackedScene" uid="uid://cyoerpnjc36pc" path="res://GFX/Enterior/Car.glb" id="9_sl7f6"]
-[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://VHS_Shader.tscn" id="10_fmhlu"]
+[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://GFX/Shaders/VHS_Shader.tscn" id="10_fmhlu"]
 [ext_resource type="AudioStream" uid="uid://b8ki0cil05da0" path="res://SFX/Effects/car_engine.mp3" id="11_c1c73"]
 [ext_resource type="AudioStream" uid="uid://buie26a065u8r" path="res://SFX/Effects/truck-door-closed.wav" id="12_3fgsd"]
 [ext_resource type="Script" path="res://Sprite2D.gd" id="12_ow3oi"]
+[ext_resource type="Theme" uid="uid://g83ropha44pl" path="res://Themes/GUI_Theme.tres" id="13_a65dj"]
 [ext_resource type="AudioStream" uid="uid://bhybvcukmiksi" path="res://SFX/Radio/Angst vorm Haus.mp3" id="14_elmhn"]
 [ext_resource type="AudioStream" uid="uid://duxqtoi57442u" path="res://SFX/Radio/News 2.wav" id="15_u75dp"]
 
@@ -42,7 +43,7 @@ size = Vector3(8, 1, 2400)
 
 [sub_resource type="Animation" id="Animation_pco0x"]
 resource_name = "Intro"
-length = 240.0
+length = 245.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -122,9 +123,12 @@ tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(240),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(17.6, 240),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"start_credits"
+}, {
 "args": [],
 "method": &"back_to_menu"
 }]
@@ -758,26 +762,59 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Car/Driver/Camera3D"]
+[node name="Sprite2D" type="Sprite2D" parent="Car/Driver/Camera3D" groups=["Credits"]]
+position = Vector2(586, 654)
 script = ExtResource("12_ow3oi")
 
-[node name="Label" type="Label" parent="Car/Driver/Camera3D/Sprite2D"]
-offset_left = 448.0
-offset_top = 272.0
-offset_right = 681.0
-offset_bottom = 584.0
-text = "Lorem Ipsum dolor silit ametg
-asdfkjölajsdf
-sdafösalödfjöladsfjka
-lasdfjlösdafjölasdfk
-sadökolfjölsadjflöasdölkfj
-ösldflösadjfasdklöfj
-asdölfkjlsöadfjasdölfkj
-öaolsdfjölksdafjösladkfj
-löaskdfjöolasdkfjlsdfköj
-alösdkfjsdflkjasdfölkj
-aösldfkjölsdakfjasdölfkj
-öasdolfkjsöadlkfjasdölkfj"
+[node name="VBoxContainer" type="VBoxContainer" parent="Car/Driver/Camera3D/Sprite2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 50
+
+[node name="LblHeading" type="Label" parent="Car/Driver/Camera3D/Sprite2D/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("13_a65dj")
+theme_override_font_sizes/font_size = 54
+text = "Credits"
+autowrap_mode = 2
+
+[node name="LblCredits" type="Label" parent="Car/Driver/Camera3D/Sprite2D/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("13_a65dj")
+text = "Idea: 
+
+DrOtter3000
+
+
+Graphics:
+
+DrOtter3000 (again)
+
+
+Programming:
+
+DrOtter3000 (what a cool otter)
+
+
+Voice Actors:
+
+News Speaker - Koda
+
+
+Music:
+
+Systemabsturz - Angst vorm Haus
+
+
+Special thanks:
+
+Whiskey Dingo for organizing the game jam
+
+My cozy and supportive community, love you all
+
+
+
+"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Car"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.05, 0, 0.691)

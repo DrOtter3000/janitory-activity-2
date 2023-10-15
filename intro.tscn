@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bl8xjw0xhrxfv" path="res://GFX/Trees/fir_4.glb" id="6_8utla"]
 [ext_resource type="PackedScene" uid="uid://1ffr8351gqup" path="res://GFX/Trees/fir_5.glb" id="7_0kww5"]
 [ext_resource type="PackedScene" uid="uid://1rxealr72wid" path="res://GFX/Trees/fir_6.glb" id="8_2ww6r"]
-[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://VHS_Shader.tscn" id="10_x2raq"]
+[ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://GFX/Shaders/VHS_Shader.tscn" id="10_x2raq"]
 [ext_resource type="AudioStream" uid="uid://b8ki0cil05da0" path="res://SFX/Effects/car_engine.mp3" id="11_1ga6f"]
 [ext_resource type="AudioStream" uid="uid://buie26a065u8r" path="res://SFX/Effects/truck-door-closed.wav" id="11_2qbgi"]
 [ext_resource type="AudioStream" uid="uid://bg1lka0mp45w5" path="res://SFX/Radio/News 1.wav" id="12_eaqj8"]

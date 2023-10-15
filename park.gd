@@ -24,8 +24,8 @@ func spawn_enemy():
 	enemy.global_position = $EnemySpawnLocation.position
 
 
-func start_phase(str):
-	match str:
+func start_phase(phase):
+	match phase:
 		"mop":
 			get_tree().call_group("GUI", "update_MissionLabel", "Go to the janitors shed and pick up the mop")
 		"puke":

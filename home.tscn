@@ -1,7 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://b48h5brtteknm"]
+[gd_scene load_steps=53 format=3 uid="uid://b48h5brtteknm"]
 
 [ext_resource type="PackedScene" uid="uid://1jp41c7npvmj" path="res://player.tscn" id="1_he85h"]
 [ext_resource type="Script" path="res://home.gd" id="1_pn5c3"]
+[ext_resource type="Material" uid="uid://bes01inukpdhc" path="res://GFX/Materials/Concrete_Ground.tres" id="2_bc7ed"]
 [ext_resource type="PackedScene" uid="uid://biwicyst0vkl2" path="res://GFX/Enterior/Bed.glb" id="2_oikyd"]
 [ext_resource type="PackedScene" uid="uid://bwoccm86ple0u" path="res://GFX/Enterior/Chair.glb" id="3_5rnxi"]
 [ext_resource type="PackedScene" uid="uid://ud8p8wogmmh6" path="res://GFX/Enterior/Table.glb" id="4_iq7h4"]
@@ -15,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dlhihs7kbk5ob" path="res://UseableObjects/flashlight.tscn" id="13_tte5m"]
 [ext_resource type="PackedScene" uid="uid://d0d5skuxrbi3d" path="res://UseableObjects/car.tscn" id="14_c3btg"]
 [ext_resource type="PackedScene" uid="uid://ba28qce04dfn4" path="res://UseableObjects/key.tscn" id="15_gn451"]
+[ext_resource type="Material" uid="uid://blqba42x4xbr3" path="res://GFX/Materials/Grass.tres" id="17_jdb0q"]
+[ext_resource type="PackedScene" uid="uid://bcqcwkajbbq5r" path="res://UseableObjects/door.tscn" id="18_25txl"]
+[ext_resource type="Script" path="res://UseableObjects/garagedoor.gd" id="19_pu5aw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u8r0f"]
 size = Vector3(200, 1, 200)
@@ -113,6 +117,9 @@ data = PackedVector3Array(1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cgdbw"]
 data = PackedVector3Array(1, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, -1, 1, 0.8905, -1, 1, 0.8905, 1, 1, 0.8905, -1, -1, 0.8905, 1, -1, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, 1, -1, 0.8905, 1, 1, 0.8905, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 0.8905, -1, 1, 0.8905, -1, -1, 0.8905, -1, -1, 0.8905, -1, 1, 0.8905, -1, -1, 0.8905, -1, -1, -1, -1, 1, 0.8905, -1, -1, 0.8905, -1, -1, -1, -1, 1, -1, -1, 1, 0.8905, -1, 1, -1, -1, 1, 0.8905, 1, 1, 0.8905, -1, 1, -1, -1, 1, -1, 1, 1, 0.8905, 1, -1, -1, 1, -1, 0.8905, -1, -1, 0.8905, 1, -1, -1, 1, -1, -1, -1, -1, 0.8905, -1, 1, -1, 1, -1, 0.8905, 1, 1, 0.8905, 1, 1, -1, 1, -1, -1, 1, -1, 0.8905, 1, 1, 0.8905, -1, 1, 0.8905, -1, -1, 0.8905, -1, -1, 0.8905, -1, 1, 0.8905, -1, -1, 0.8905, -1, -1, 0.8905, -1, -1, 0.8905, -1, -1, 0.8905, 1, -1, 0.8905, 1, -1, 0.8905, -1, -1, 0.8905, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 0.8905, -1, -1, 0.8905, -1, -1, 0.8905, 1, -1, 0.8905, 1, -1, 0.8905, -1, -1, 0.8905, 1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 0.8905, 1, 1, 0.8905, 1.0397, 1, 0.8905, 1, -1, 0.8905, 1, -1, 0.8905, 1.0397, 1, 0.8905, 1.0397, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 0.8905, 1, -1, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, 1, -1, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, -1, 1, 0.8905, -1, 1, 0.8905, 1, 1, 0.8905, -1, 1, 0.8905, 1, 1.0745, 0.8905, -1, 1, 0.8905, -1, 1, 0.8905, 1, 1.0745, 0.8905, 1, 1.0745, 0.8905, -1, -1, 1, 1, -1, 0.8905, 1.0397, -1, 0.8905, 1, -1, 1, 1, -1, 1, 1.0397, -1, 0.8905, 1.0397, 1, 0.8905, 1, 1.0745, 0.8905, 1.0397, 1.0745, 0.8905, 1, 1, 0.8905, 1, 1, 0.8905, 1.0397, 1.0745, 0.8905, 1.0397, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, -1, 0.8905, 1, -1, 1, -1, -1, 1, 1, -1, 0.8905, 1, -1, 0.8905, -1, -1, 1, -1, 1, 1, -1, 1.0745, 1, 1, 1, 1, 1, 1, 1, -1, 1.0745, 1, -1, 1.0745, 1, 1, -1, 0.8905, -1, 1, 1, -1, -1, 1, -1, -1, 0.8905, -1, 1, 0.8905, -1, 1, 1, -1, 1.0745, 0.8905, -1, 1.0745, 1, 1, 1.0745, 1, -1, 1.0745, 0.8905, -1, 1.0745, 0.8905, 1, 1.0745, 1, 1, 1, 0.8905, -1, 1.0745, 1, -1, 1, 1, -1, 1, 0.8905, -1, 1.0745, 0.8905, -1, 1.0745, 1, -1, 1, 0.8905, 1.0397, -1, 1, 1.0397, 1, 1, 1.0397, 1, 0.8905, 1.0397, -1, 0.8905, 1.0397, -1, 1, 1.0397, 1, 1, 1.0397, 1.0745, 0.8905, 1.0397, 1, 0.8905, 1.0397, 1, 1, 1.0397, 1.0745, 1, 1.0397, 1.0745, 0.8905, 1.0397, 1.0745, 1, 1, 1, 1, 1.0397, 1, 1, 1, 1.0745, 1, 1, 1.0745, 1, 1.0397, 1, 1, 1.0397, 1.0745, 0.8905, 1, 1.0745, 1, 1.0397, 1.0745, 1, 1, 1.0745, 0.8905, 1, 1.0745, 0.8905, 1.0397, 1.0745, 1, 1.0397, 1, 1, 1, -1, 1, 1.0397, -1, 1, 1, 1, 1, 1, 1, 1, 1.0397, -1, 1, 1.0397)
 
+[sub_resource type="BoxMesh" id="BoxMesh_8on30"]
+size = Vector3(40, 1, 10)
+
 [node name="Home" type="Node3D"]
 script = ExtResource("1_pn5c3")
 
@@ -124,6 +131,7 @@ shadow_enabled = true
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_u8r0f")
+surface_material_override/0 = ExtResource("2_bc7ed")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
@@ -355,13 +363,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01063, 0.516887, -0.984653
 shape = SubResource("ConcavePolygonShape3D_cgdbw")
 
 [node name="Car" parent="." instance=ExtResource("14_c3btg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292917, 0.899124, 7.5151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63389, 0.899124, 6.26323)
 
 [node name="Flashlight" parent="." instance=ExtResource("13_tte5m")]
 transform = Transform3D(0.881081, 0.472339, 0.0243492, 0, 0.0514819, -0.998674, -0.472966, 0.879912, 0.0453597, -7.81871, 1.2775, -2.22325)
 
 [node name="Key" parent="." instance=ExtResource("15_gn451")]
-transform = Transform3D(0.644551, 0, 0.764562, 0, 1, 0, -0.764562, 0, 0.644551, -11.5432, 1.13759, 6.94506)
+transform = Transform3D(0.644551, 0, 0.764562, 0, 1, 0, -0.764562, 0, 0.644551, -11.5432, 1.13077, 6.94506)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7243, -0.452499, -6.82557)
+mesh = SubResource("BoxMesh_8on30")
+surface_material_override/0 = ExtResource("17_jdb0q")
+
+[node name="Housedoor" parent="." instance=ExtResource("18_25txl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.01, 0, -1, 0, -4.37114e-08, -6.43275, 0.488636, -0.643934)
+
+[node name="DoorInside_1" parent="." instance=ExtResource("18_25txl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38829, 0.500947, -4.62409)
+
+[node name="DoorInside_2" parent="." instance=ExtResource("18_25txl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.88462, 0.500947, -4.62409)
+
+[node name="DoorGarage" parent="." instance=ExtResource("18_25txl")]
+transform = Transform3D(-0.9, 0, -8.74228e-08, 0, 0.9, 0, 7.86805e-08, 0, -1, -12.5368, -0.0629091, 4.53119)
+script = ExtResource("19_pu5aw")
 
 [editable path="House"]
 [editable path="couch"]

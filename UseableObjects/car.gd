@@ -8,7 +8,7 @@ var full = true
 
 func use():
 	if Gamestate.sacrified_goods:
-		print("winner")
+		get_tree().change_scene_to_file("res://outro.tscn")
 	elif Gamestate.at_home and Gamestate.has_keys:
 		get_tree().change_scene_to_file("res://intro.tscn")
 		

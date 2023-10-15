@@ -73,7 +73,6 @@ func _process(delta):
 	
 	velocity.y -= gravity * delta
 	move_and_slide()
-	
 
 
 func look_for_player():

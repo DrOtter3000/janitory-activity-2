@@ -20,3 +20,7 @@ func _input(event):
 
 func back_to_menu():
 	get_tree().change_scene_to_file("res://Themes/main_menu.tscn")
+
+
+func start_credits():
+	get_tree().call_group("Credits", "start_credits")
