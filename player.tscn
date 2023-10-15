@@ -94,3 +94,8 @@ autoplay = "fade_in"
 libraries = {
 "": SubResource("AnimationLibrary_4rcak")
 }
+
+[node name="RegenerationTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="RegenerationTimer" to="." method="_on_regeneration_timer_timeout"]

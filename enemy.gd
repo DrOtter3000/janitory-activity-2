@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-var speed = 3
+
+var speed = 5
 
 var status = "patrol"
 var haunting = true
@@ -24,6 +25,7 @@ func _process(delta):
 	if Gamestate.on_the_hunt:
 		match status:
 			"haunting":
+				speed = 5
 				$AnimationPlayer.play("RESET")
 				var player_position = get_tree().get_first_node_in_group("Player").position
 				var direction = Vector3()
@@ -46,6 +48,7 @@ func _process(delta):
 
 
 			"patrol":
+				speed = 3
 				$AnimationPlayer.play("search_mode")
 				var direction = Vector3()
 			

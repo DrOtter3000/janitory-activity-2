@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4obgjuxe85lf"]
+[gd_scene load_steps=5 format=3 uid="uid://c4obgjuxe85lf"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_op54d"]
 [ext_resource type="Theme" uid="uid://g83ropha44pl" path="res://Themes/GUI_Theme.tres" id="2_ibl1w"]
+[ext_resource type="Texture2D" uid="uid://djaiyvv6xu1wg" path="res://GFX/GUI/BarBackGround.png" id="3_8pt5m"]
+[ext_resource type="Texture2D" uid="uid://bbcdthj2mpgyv" path="res://GFX/GUI/BarOverLay.png" id="4_2jj0n"]
 
 [node name="GUI" type="CanvasLayer" groups=["GUI"]]
 script = ExtResource("1_op54d")
@@ -29,3 +31,12 @@ offset_top = 8.0
 offset_right = 640.0
 offset_bottom = 48.0
 theme = ExtResource("2_ibl1w")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="."]
+offset_left = 936.0
+offset_top = 600.0
+offset_right = 1136.0
+offset_bottom = 648.0
+value = 50.0
+texture_under = ExtResource("3_8pt5m")
+texture_progress = ExtResource("4_2jj0n")

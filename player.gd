@@ -3,8 +3,10 @@ extends CharacterBody3D
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5
-var jump_speed = 5
+#var jump_speed = 5
 var mouse_sensitivity = 0.002
+var stamina_blocked = false
+var stamina = 100
 
 #CamBob
 var direction = Vector3.ZERO
@@ -31,6 +33,19 @@ func _physics_process(delta):
 
 
 func _process(delta):
+	if Input.is_action_pressed("run") and stamina > 0:
+		speed = 7
+		stamina -= .5
+		stamina_blocked = true
+	else:
+		speed = 5
+		stamina_blocked = false
+	
+	get_tree().call_group("GUI", "update_StaminaBar", stamina)
+	
+	if Input.is_action_just_released("run"):
+		$RegenerationTimer.start()	
+		
 	cambob(delta)
 	handle_ground()
 	check_flashlight_status()
@@ -59,6 +74,8 @@ func check_flashlight_status():
 
 
 func _input(event):
+	if Input.is_action_pressed("run"):
+		speed = 7
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
@@ -81,8 +98,8 @@ func movement(delta):
 	velocity.z = movement_dir.z * speed
 	if not Gamestate.in_call:
 		move_and_slide()
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = jump_speed
+#	if is_on_floor() and Input.is_action_just_pressed("jump"):
+#		velocity.y = jump_speed
 	
 	direction = movement_dir
 
@@ -129,3 +146,8 @@ func take_mop():
 
 func drop_mop():
 	$Camera3D/MopInHand.queue_free()
+
+
+func _on_regeneration_timer_timeout():
+	if stamina <= 100:
+		stamina += 1
