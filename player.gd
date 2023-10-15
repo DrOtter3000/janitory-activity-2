@@ -79,8 +79,8 @@ func movement(delta):
 	var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
 	velocity.x = movement_dir.x * speed
 	velocity.z = movement_dir.z * speed
-
-	move_and_slide()
+	if not Gamestate.in_call:
+		move_and_slide()
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
 	

@@ -24,3 +24,7 @@ var has_baguette = false
 var has_pilk = false
 
 var ready_to_sacrify = true
+
+var checkpoint_active = false
+
+var in_call = false

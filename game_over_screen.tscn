@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://y8yydwgkhrks"]
+[gd_scene load_steps=9 format=3 uid="uid://y8yydwgkhrks"]
 
 [ext_resource type="PackedScene" uid="uid://c8el301bd0otd" path="res://GFX/Characters/Dingo.glb" id="1_qs5m5"]
 [ext_resource type="Script" path="res://game_over_screen.gd" id="1_tyuto"]
 [ext_resource type="Theme" uid="uid://cm7u8tucrkcqk" path="res://Themes/Menu_Theme.tres" id="2_05y6x"]
 [ext_resource type="Theme" uid="uid://g83ropha44pl" path="res://Themes/GUI_Theme.tres" id="3_nqpwm"]
+[ext_resource type="AudioStream" uid="uid://ch6tvd8meyvty" path="res://SFX/Effects/671008__mrangelgames__combined-jumpscare.ogg" id="5_gkmja"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gjdu2"]
 sky_top_color = Color(0.164706, 0.0392157, 0.0627451, 1)
@@ -75,6 +76,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gkmja")
+autoplay = true
 
 [connection signal="pressed" from="Camera3D/ContinueBox/HBoxContainer/BtnLoadCheckpoint" to="." method="_on_btn_load_checkpoint_pressed"]
 [connection signal="pressed" from="Camera3D/ContinueBox/HBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]

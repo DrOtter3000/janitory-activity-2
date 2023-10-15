@@ -11,6 +11,9 @@ func _ready():
 	Gamestate.at_home = false
 	Gamestate.has_flashlight = true
 	start_phase("mop")
+	if Gamestate.checkpoint_active:
+		$Player.global_position = Vector3(-60.5, 1.373, -50.39)
+		start_phase("message_1")
 
 
 func _process(delta):
@@ -38,18 +41,27 @@ func start_phase(phase):
 			get_tree().call_group("Container", "activate_container")
 			get_tree().call_group("Container", "make_useable")
 		"message_1":
+			$SFX.stream = load("res://SFX/Effects/545362__stwime__friendly.ogg")
+			$SFX.play()
+			Gamestate.in_call = true
 			get_tree().call_group("GUI", "update_MissionLabel", "Press (E) to answer your phone")
 			get_tree().call_group("Phone", "change_useable_status")
 			Gamestate.smartphone_equiped = 2
+			Gamestate.checkpoint_active = true
 		"into_the_trap":
+			Gamestate.in_call = false
 			get_tree().call_group("GUI", "update_MissionLabel", "Meet Whiskey Dingo at the ferris wheel")
 			spawn_enemy()
 		"message_2":
+			$SFX.stream = load("res://SFX/Effects/545362__stwime__friendly.ogg")
+			$SFX.play()
+			Gamestate.in_call = true
 			Gamestate.trap_active = false
 			get_tree().call_group("GUI", "update_MissionLabel", "Press (E) to answer your phone")
 			get_tree().call_group("Phone", "change_useable_status")
 			Gamestate.smartphone_equiped = 2
 		"haunting":
+			Gamestate.in_call = false
 			Gamestate.on_the_hunt = true
 			get_tree().call_group("GUI", "update_MissionLabel", "Get Pilk, Baguette and Parfait... But don't get caught")
 			spawn_stuff()

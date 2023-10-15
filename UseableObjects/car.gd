@@ -18,7 +18,6 @@ func use():
 func update_gui():
 	if Gamestate.at_home:
 		if Gamestate.has_keys:
-			print("has keys")
 			get_tree().call_group("GUI", "update_ActivityLabel", "(E)Use")
 		else:
 			get_tree().call_group("GUI", "update_ActivityLabel", "I need the keys")
@@ -27,6 +26,12 @@ func update_gui():
 			get_tree().call_group("GUI", "update_ActivityLabel", "(E)Use")
 		else:
 			get_tree().call_group("GUI", "update_ActivityLabel", "You can't leave, you have a job to do")
+
+
+func start_phase(phase):
+	match phase:
+		"get_keys":
+			get_tree()
 
 
 func make_useable():

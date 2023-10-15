@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kgvcfixtov6x"]
+[gd_scene load_steps=29 format=3 uid="uid://kgvcfixtov6x"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_vwkjn"]
 
@@ -411,6 +411,9 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_y6dyf"]
 radius = 10.9689
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i7yh0"]
+size = Vector3(0.47186, 0.901087, 0.668584)
+
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_vwkjn")
 
@@ -490,5 +493,12 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueArea"]
 shape = SubResource("SphereShape3D_y6dyf")
 
+[node name="KillArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.407597)
+shape = SubResource("BoxShape3D_i7yh0")
+
 [connection signal="timeout" from="HauntingTimer" to="." method="_on_haunting_timer_timeout"]
 [connection signal="body_entered" from="DialogueArea" to="." method="_on_dialogue_area_body_entered"]
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

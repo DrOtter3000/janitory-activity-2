@@ -3,7 +3,6 @@ extends Node3D
 
 func _ready():
 	randomize()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _process(delta):
@@ -13,11 +12,12 @@ func _process(delta):
 
 func _on_timer_timeout():
 	$Camera3D/ContinueBox.visible = true
-
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_btn_quit_pressed():
+	Gamestate.checkpoint_active = false
 	get_tree().change_scene_to_file("res://Themes/main_menu.tscn")
 
 
 func _on_btn_load_checkpoint_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://park.tscn")

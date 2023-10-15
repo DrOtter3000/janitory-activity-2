@@ -100,3 +100,8 @@ func get_back_trail():
 func _on_dialogue_area_body_entered(body):
 	if body.is_in_group("Player") and not Gamestate.on_the_hunt:
 		get_tree().call_group("Park", "start_phase", "message_2")
+
+
+func _on_kill_area_body_entered(body):
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://game_over_screen.tscn")
