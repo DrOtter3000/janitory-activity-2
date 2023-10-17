@@ -8,7 +8,7 @@ func _ready():
 func use():
 	if Gamestate.has_mop:
 		Gamestate.puke_left -= 1
-		get_tree().call_group("GUI", "update_MissionLabel", "Clean up puke: " + str(Gamestate.puke_left))
+		get_tree().call_group("GUI", "update_MissionLabel", "Clean up puke at the rollercoaster, the ferris wheel and the free fall tower. Puke left: " + str(Gamestate.puke_left))
 		get_tree().call_group("Mop", "animate")
 		if Gamestate.puke_left <= 0:
 			get_tree().call_group("Park", "start_phase", "trash")

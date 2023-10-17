@@ -6,7 +6,7 @@ var speed = 5
 #var jump_speed = 5
 var mouse_sensitivity = 0.002
 var stamina_blocked = false
-var stamina = 100
+var stamina = 150
 
 #CamBob
 var direction = Vector3.ZERO
@@ -34,7 +34,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	if Input.is_action_pressed("run") and stamina > 0:
-		speed = 7
+		speed = 8
 		stamina -= .5
 		stamina_blocked = true
 	else:
@@ -74,8 +74,6 @@ func check_flashlight_status():
 
 
 func _input(event):
-	if Input.is_action_pressed("run"):
-		speed = 7
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)

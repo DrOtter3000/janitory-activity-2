@@ -25,8 +25,9 @@ func _process(delta):
 		var player_position = get_tree().get_first_node_in_group("Player").position
 		match status:
 			"haunting":
-				speed = 5
-				$AnimationPlayer.play("RESET")
+				speed = 4.5
+				$AnimationPlayer.play("hunt")
+				
 				var direction = Vector3()
 	
 				$Andre.look_at(player_position)
@@ -48,7 +49,7 @@ func _process(delta):
 
 
 			"patrol":
-				speed = 3
+				speed = 3.5
 				$AnimationPlayer.play("search_mode")
 				var direction = Vector3()
 			

@@ -3,6 +3,7 @@ extends Node3D
 
 @export var new_enemy : PackedScene
 @export var new_enemy2 : PackedScene
+@export var new_enemy3 : PackedScene
 
 
 func _ready():
@@ -31,12 +32,18 @@ func spawn_enemy2():
 	enemy.global_position = $Enemy2SpawnLocation.position
 
 
+func spawn_enemy3():
+	var enemy = new_enemy3.instantiate() as Node3D
+	add_child(enemy)
+	enemy.global_position = $Enemy3SpawnLocation.position
+
+
 func start_phase(phase):
 	match phase:
 		"mop":
 			get_tree().call_group("GUI", "update_MissionLabel", "Go to the janitors shed and pick up the mop")
 		"puke":
-			get_tree().call_group("GUI", "update_MissionLabel", "Clean up puke: " + str(Gamestate.puke_left))
+			get_tree().call_group("GUI", "update_MissionLabel", "Clean up puke at the rollercoaster, the ferris wheel and the free fall tower. Puke left: " + str(Gamestate.puke_left))
 		"trash":
 			get_tree().call_group("GUI", "update_MissionLabel", "Pick up Trash from bins: " + str(Gamestate.number_of_trashbins - Gamestate.trash_collected))
 			get_tree().call_group("Trashbin", "make_useable")
@@ -66,6 +73,7 @@ func start_phase(phase):
 			Gamestate.smartphone_equiped = 2
 		"haunting":
 			spawn_enemy2()
+			spawn_enemy3()
 			Gamestate.in_call = false
 			Gamestate.on_the_hunt = true
 			get_tree().call_group("GUI", "update_MissionLabel", "Get Pilk, Baguette and Parfait... But don't get caught")
