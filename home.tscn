@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b48h5brtteknm"]
+[gd_scene load_steps=71 format=3 uid="uid://b48h5brtteknm"]
 
 [ext_resource type="PackedScene" uid="uid://1jp41c7npvmj" path="res://player.tscn" id="1_he85h"]
 [ext_resource type="Script" path="res://home.gd" id="1_pn5c3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://x2042yxselnt" path="res://GFX/Buildings/Home/House.glb" id="5_mujmi"]
 [ext_resource type="PackedScene" uid="uid://cqt5iewxl1uda" path="res://GFX/Enterior/couch.glb" id="6_y2udo"]
 [ext_resource type="PackedScene" uid="uid://dc38neq3cav1u" path="res://GFX/Enterior/TVboard.glb" id="7_62kot"]
+[ext_resource type="Material" uid="uid://cri3rsls3la7k" path="res://GFX/Materials/Glass.tres" id="8_1lw6x"]
 [ext_resource type="PackedScene" uid="uid://cc2vohcbwevr1" path="res://GFX/Enterior/couchtable.glb" id="8_5woc4"]
 [ext_resource type="PackedScene" uid="uid://4c8o654oq8fo" path="res://GFX/Enterior/Nighttable.glb" id="9_wur5g"]
 [ext_resource type="PackedScene" uid="uid://nt3embd1rxqm" path="res://GFX/Buildings/Home/Garage.glb" id="10_1l8pu"]
@@ -23,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://cwse43nkviyt6" path="res://GFX/Buildings/Home/OtherHouses/NPC_house_1.glb" id="21_d8chr"]
 [ext_resource type="PackedScene" uid="uid://cb7706mev5tyw" path="res://GFX/Buildings/Home/OtherHouses/NPC_house_2.glb" id="22_sfj3a"]
 [ext_resource type="PackedScene" uid="uid://bfd0g7i60hoq3" path="res://GFX/Buildings/Home/OtherHouses/NPC_house_3.glb" id="23_e0bni"]
+[ext_resource type="PackedScene" uid="uid://cybdgg83xlhxi" path="res://GFX/Trees/fir_1.glb" id="24_8yn8u"]
+[ext_resource type="PackedScene" uid="uid://bllnfip3ouavx" path="res://GFX/Trees/fir_2.glb" id="25_m4j1f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ndmu"]
 sky_top_color = Color(0.184314, 0.121569, 0.219608, 1)
@@ -102,6 +105,9 @@ data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1,
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yac6y"]
 data = PackedVector3Array(-1, -1, 1, 0.0001, 0.0498, -1, 0.0001, 0.0498, 1, -1, -1, 1, -1, -1, -1, 0.0001, 0.0498, -1, 0, -1, -1, 1, -1, -1, 0.0001, 0.0498, -1, 1, -1, -1, 0.0001, 0.0498, 1, 0.0001, 0.0498, -1, 1, -1, -1, 1, -1, 1, 0.0001, 0.0498, 1, 0, -1, 1, -1, -1, 1, 0.0001, 0.0498, 1, 0, -1, -1, 1, -1, 1, 1, -1, -1, 0, -1, -1, 0, -1, 1, 1, -1, 1, -1, -1, -1, 0, -1, 1, 0, -1, -1, -1, -1, -1, -1, -1, 1, 0, -1, 1, 1, -1, 1, 0, -1, 1, 0.0001, 0.0498, 1, -1, -1, -1, 0, -1, -1, 0.0001, 0.0498, -1, -1, -1, -98, 0.0001, 0.0498, -96, -1, -1, -96, -1, -1, -98, 0.0001, 0.0498, -98, 0.0001, 0.0498, -96, 0, -1, -96, 0.0001, 0.0498, -96, 1, -1, -96, 1, -1, -96, 0.0001, 0.0498, -98, 1, -1, -98, 1, -1, -96, 0.0001, 0.0498, -96, 0.0001, 0.0498, -98, 0, -1, -98, 0.0001, 0.0498, -98, -1, -1, -98, 0, -1, -96, 1, -1, -98, 0, -1, -98, 0, -1, -96, 1, -1, -96, 1, -1, -98, -1, -1, -96, 0, -1, -98, -1, -1, -98, -1, -1, -96, 0, -1, -96, 0, -1, -98, 1, -1, -98, 0.0001, 0.0498, -98, 0, -1, -98, -1, -1, -96, 0.0001, 0.0498, -96, 0, -1, -96)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fphtv"]
+size = Vector3(0.025, 2.5, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bka7j"]
 size = Vector3(0.420604, 0.922184, 0.889948)
@@ -340,6 +346,36 @@ shape = SubResource("ConcavePolygonShape3D_4ycxq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="House/Cube_013/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yac6y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29905, 2.02369, 0.482714)
+mesh = SubResource("BoxMesh_fphtv")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = ExtResource("8_1lw6x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21651, 2.02369, 0.0429537)
+mesh = SubResource("BoxMesh_fphtv")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = ExtResource("8_1lw6x")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21651, 2.02369, -3.35433)
+mesh = SubResource("BoxMesh_fphtv")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = ExtResource("8_1lw6x")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="House"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.81071, 2.63986, -4.89298)
+mesh = SubResource("BoxMesh_fphtv")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = ExtResource("8_1lw6x")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="House"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.93517, 2.25708, 4.87269)
+mesh = SubResource("BoxMesh_fphtv")
+skeleton = NodePath("../../WorldEnvironment")
+surface_material_override/0 = ExtResource("8_1lw6x")
 
 [node name="Lamps" type="Node" parent="."]
 
@@ -856,6 +892,41 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 27.185
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.485112, 0, -2.70002)
 shape = SubResource("BoxShape3D_1t8x7")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="fir_1" parent="Node" instance=ExtResource("24_8yn8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2264, 1.96121, 12.008)
+
+[node name="fir_2" parent="Node" instance=ExtResource("24_8yn8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2264, 1.96121, -40.8992)
+
+[node name="fir_3" parent="Node" instance=ExtResource("24_8yn8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7446, 1.96121, -64.9472)
+
+[node name="fir_4" parent="Node" instance=ExtResource("24_8yn8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6798, 1.96121, -82.7941)
+
+[node name="fir_5" parent="Node" instance=ExtResource("24_8yn8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3353, 1.96121, -30.389)
+
+[node name="fir_6" parent="Node" instance=ExtResource("24_8yn8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3353, 1.96121, 41.0701)
+
+[node name="fir_7" parent="Node" instance=ExtResource("25_m4j1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2661, 2.50233, 22.4746)
+
+[node name="fir_8" parent="Node" instance=ExtResource("25_m4j1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51391, 1.76153, 56.2006)
+
+[node name="fir_9" parent="Node" instance=ExtResource("25_m4j1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.4596, 0, 41.6585)
+
+[node name="fir_10" parent="Node" instance=ExtResource("25_m4j1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5358, 2.29111, 11.8617)
+
+[node name="fir_11" parent="Node" instance=ExtResource("25_m4j1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5358, 2.55065, -19.9553)
 
 [editable path="House"]
 [editable path="couch"]

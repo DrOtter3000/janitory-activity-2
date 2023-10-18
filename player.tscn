@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://1jp41c7npvmj"]
+[gd_scene load_steps=12 format=3 uid="uid://1jp41c7npvmj"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3ckh1"]
 [ext_resource type="PackedScene" uid="uid://c4obgjuxe85lf" path="res://gui.tscn" id="3_g0but"]
 [ext_resource type="PackedScene" uid="uid://d1sowxaoccwf5" path="res://GFX/Shaders/VHS_Shader.tscn" id="4_6lbjv"]
 [ext_resource type="PackedScene" uid="uid://bsjpf7mj0vknw" path="res://mop_in_hand.tscn" id="4_rlg30"]
 [ext_resource type="PackedScene" uid="uid://cx1jadgq3ipsh" path="res://smartphone_in_hand.tscn" id="5_o2f5g"]
+[ext_resource type="Texture2D" uid="uid://f161v7vykoop" path="res://GFX/2D_Art/DemonicMoment.png" id="5_xcqrj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_533aj"]
 radius = 0.3
@@ -24,6 +25,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_vivuc"]
 resource_name = "fade_in"
@@ -40,8 +53,24 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_714mv"]
+resource_name = "DemonicMoment"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4rcak"]
 _data = {
+"DemonicMoment": SubResource("Animation_714mv"),
 "RESET": SubResource("Animation_khbhf"),
 "fade_in": SubResource("Animation_vivuc")
 }
@@ -70,6 +99,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xcqrj")
+expand_mode = 2
 
 [node name="Flashlight" type="SpotLight3D" parent="Camera3D"]
 light_energy = 0.0

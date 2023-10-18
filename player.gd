@@ -25,6 +25,7 @@ var flashlight = false
 
 
 func _ready():
+	$Camera3D/TextureRect.visible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
@@ -149,3 +150,7 @@ func drop_mop():
 func _on_regeneration_timer_timeout():
 	if stamina <= 150:
 		stamina += 1
+
+
+func play_demonicMoment():
+	$AnimationPlayer.play("DemonicMoment")

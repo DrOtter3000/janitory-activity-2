@@ -175,7 +175,7 @@ offset_left = 960.0
 offset_top = 616.0
 offset_right = 1144.0
 offset_bottom = 639.0
-text = "Version 0.0"
+text = "Version 1.0"
 horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

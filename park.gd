@@ -81,6 +81,8 @@ func start_phase(phase):
 		"ready_to_sacrifice":
 			get_tree().call_group("GUI", "update_MissionLabel", "Sacrify the goods in the DingoDen")
 		"escape":
+			play_thunder()
+			get_tree().call_group("Player", "play_demonicMoment")
 			get_tree().call_group("GUI", "update_MissionLabel", "Reach your car and escape this place")
 			
 
@@ -88,3 +90,8 @@ func spawn_stuff():
 	$NavigationRegion3D/Attractions/AndreParfait/ParfaitUseable.visible = true
 	$NavigationRegion3D/Attractions/chesterpilk/Pilk_useable.visible = true
 	$NavigationRegion3D/Attractions/LuiroiBaguette/BaguetteUseable.visible = true
+
+
+func play_thunder():
+	$SFX.stream = load("res://SFX/Effects/399656__bajko__sfx_thunder-blast.wav")
+	$SFX.play()

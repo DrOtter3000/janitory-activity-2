@@ -8,7 +8,6 @@ func _ready():
 
 
 func change_MissionLabel():
-	print("change")
 	if Gamestate.has_keys:
 		get_tree().call_group("GUI", "update_MissionLabel", "Drive to work")
 	else:
