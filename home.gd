@@ -12,5 +12,4 @@ func change_MissionLabel():
 		get_tree().call_group("GUI", "update_MissionLabel", "Drive to work")
 	else:
 		get_tree().call_group("GUI", "update_MissionLabel", "Go to the garage and pick up keys")
-			
-			
+

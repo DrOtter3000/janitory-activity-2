@@ -20,6 +20,8 @@ Gamestate="*res://Gamestate.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1088
 window/stretch/mode="viewport"
 
 [editor]

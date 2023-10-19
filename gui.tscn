@@ -33,10 +33,10 @@ offset_bottom = 48.0
 theme = ExtResource("2_ibl1w")
 
 [node name="StaminaBar" type="TextureProgressBar" parent="."]
-offset_left = 936.0
-offset_top = 600.0
-offset_right = 1136.0
-offset_bottom = 648.0
+offset_left = 1664.0
+offset_top = 1024.0
+offset_right = 1864.0
+offset_bottom = 1072.0
 max_value = 150.0
 value = 50.0
 texture_under = ExtResource("3_8pt5m")

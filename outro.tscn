@@ -763,7 +763,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Car/Driver/Camera3D" groups=["Credits"]]
-position = Vector2(586, 654)
+position = Vector2(1293, 1094)
 script = ExtResource("12_ow3oi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Car/Driver/Camera3D/Sprite2D"]

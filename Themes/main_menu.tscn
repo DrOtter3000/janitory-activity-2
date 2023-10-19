@@ -73,13 +73,13 @@ offset_bottom = 616.0
 
 [node name="Lbl2" type="Label" parent="Main"]
 layout_mode = 2
-offset_left = 792.0
-offset_top = -64.0
-offset_right = 1068.0
-offset_bottom = 474.0
+offset_left = 1239.0
+offset_top = -165.0
+offset_right = 1708.0
+offset_bottom = 746.0
 theme_override_colors/font_color = Color(1, 0.196078, 0.145098, 1)
 theme_override_fonts/font = ExtResource("1_uaamm")
-theme_override_font_sizes/font_size = 471
+theme_override_font_sizes/font_size = 800
 text = "2"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main"]
@@ -88,16 +88,17 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 8.0
-offset_bottom = -8.0
+offset_right = 768.0
+offset_bottom = 456.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="Main/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uaamm")
-theme_override_font_sizes/font_size = 170
-text = "Janitory 
+theme_override_font_sizes/font_size = 250
+text = "Janitory
 Activity"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main/VBoxContainer"]
@@ -171,11 +172,11 @@ alignment = 0
 
 [node name="LblVersion" type="Label" parent="."]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 616.0
-offset_right = 1144.0
-offset_bottom = 639.0
-text = "Version 1.0"
+offset_left = 1696.0
+offset_top = 1032.0
+offset_right = 1880.0
+offset_bottom = 1058.0
+text = "Version 1.0.1"
 horizontal_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

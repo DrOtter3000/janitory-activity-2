@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if credits_started:
-		position.y -= .15
+		position.y -= .5
 
 
 func start_credits():

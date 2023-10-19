@@ -43,6 +43,8 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -142.0
+offset_right = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
@@ -51,7 +53,8 @@ alignment = 1
 [node name="LblContinue" type="Label" parent="Camera3D/ContinueBox"]
 layout_mode = 2
 theme = ExtResource("2_05y6x")
-text = "Do you want to load the last checkpoint?"
+text = "Do you want to load the last
+checkpoint?"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera3D/ContinueBox"]
@@ -62,11 +65,13 @@ alignment = 1
 [node name="BtnLoadCheckpoint" type="Button" parent="Camera3D/ContinueBox/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_nqpwm")
+theme_override_font_sizes/font_size = 50
 text = "Load Checkpoint"
 
 [node name="BtnQuit" type="Button" parent="Camera3D/ContinueBox/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_nqpwm")
+theme_override_font_sizes/font_size = 50
 text = "Back to Menu"
 
 [node name="Dingo" parent="." instance=ExtResource("1_qs5m5")]

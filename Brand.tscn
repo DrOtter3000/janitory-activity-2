@@ -74,70 +74,58 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("DarknetOnline-01:scale")
+tracks/5/path = NodePath("DarknetOnline-01:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(7),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(7, 9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.7, 0.7)]
+"values": [Vector2(960, -400), Vector2(960, 540)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("DarknetOnline-01:position")
+tracks/6/path = NodePath("AudioStreamPlayer:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(7, 9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(576, -264), Vector2(576, 320)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("AudioStreamPlayer:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(2.5, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AudioStreamPlayer:stream")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 8.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("1_o3rp7"), ExtResource("2_50tmk")]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("TextureRect:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/10/type = "method"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath(".")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(15.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -211,58 +199,46 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("DarknetOnline-01:scale")
+tracks/5/path = NodePath("DarknetOnline-01:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.7, 0.7)]
+"values": [Vector2(576, -264)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("DarknetOnline-01:position")
+tracks/6/path = NodePath("AudioStreamPlayer:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, -264)]
+"update": 1,
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("AudioStreamPlayer:playing")
+tracks/7/path = NodePath("AudioStreamPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [ExtResource("1_o3rp7")]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AudioStreamPlayer:stream")
+tracks/8/path = NodePath("TextureRect:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_o3rp7")]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("TextureRect:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -300,18 +276,17 @@ libraries = {
 }
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(576, 312)
+position = Vector2(960, 540)
 texture = ExtResource("1_v6hq4")
-offset = Vector2(0, 16)
 
 [node name="LogoFoak" type="Sprite2D" parent="."]
-position = Vector2(576, 328)
+position = Vector2(960, 540)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_tgr7p")
 
 [node name="DarknetOnline-01" type="Sprite2D" parent="."]
 position = Vector2(576, -264)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_hvn8i")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
