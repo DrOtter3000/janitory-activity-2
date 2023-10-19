@@ -11,6 +11,21 @@
 radius = 0.3
 height = 1.83
 
+[sub_resource type="Animation" id="Animation_714mv"]
+resource_name = "DemonicMoment"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_khbhf"]
 length = 0.001
 tracks/0/type = "value"
@@ -51,21 +66,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_714mv"]
-resource_name = "DemonicMoment"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D/TextureRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4rcak"]
@@ -124,8 +124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.105646)
 
 [node name="GroundDetectionRayCast" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.203024, 0)
-
-[node name="FootstepsSFX" type="AudioStreamPlayer" parent="."]
+collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fade_in"
@@ -135,5 +134,9 @@ libraries = {
 
 [node name="RegenerationTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="FootstepsSFX" type="AudioStreamPlayer" parent="."]
+
+[node name="OtherSFX" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="RegenerationTimer" to="." method="_on_regeneration_timer_timeout"]

@@ -656,7 +656,7 @@ mesh = SubResource("ArrayMesh_rkp5m")
 skeleton = NodePath("")
 
 [node name="Head" type="MeshInstance3D" parent="Skaifox"]
-transform = Transform3D(-7.21238e-09, 0, 0.165, 0, 0.165, 0, -0.165, 0, -7.21238e-09, 0, 0.522136, 0)
+transform = Transform3D(-5.97298e-07, 0, 0.165, 0, 0.165, 0, -0.165, 0, -5.97298e-07, 0, 0.522136, 0)
 mesh = SubResource("ArrayMesh_7cuos")
 skeleton = NodePath("")
 

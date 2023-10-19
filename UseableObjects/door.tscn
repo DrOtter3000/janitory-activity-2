@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcqcwkajbbq5r"]
+[gd_scene load_steps=14 format=3 uid="uid://bcqcwkajbbq5r"]
 
 [ext_resource type="PackedScene" uid="uid://d3s0hscphsgpm" path="res://UseableObjects/useable.tscn" id="1_wppwe"]
 [ext_resource type="Script" path="res://UseableObjects/door.gd" id="2_j8ew2"]
 [ext_resource type="AudioStream" uid="uid://cugpgyt1vljd" path="res://SFX/Effects/m_door_open.wav" id="3_n2yxl"]
-[ext_resource type="AudioStream" uid="uid://fagamqvh565n" path="res://SFX/Effects/m_door_close.wav" id="4_jyf7w"]
+[ext_resource type="AudioStream" uid="uid://wrhlplfwjrdn" path="res://SFX/Effects/w_door_close.wav" id="4_apnhu"]
+[ext_resource type="AudioStream" uid="uid://b1t5slv57rndn" path="res://SFX/Effects/w_door_open.wav" id="5_vrnvl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4gj50"]
 size = Vector3(1, 2.3, 0.025)
@@ -81,7 +82,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_jyf7w")]
+"values": [ExtResource("4_apnhu")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -106,7 +107,7 @@ tracks/0/path = NodePath("Node3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
@@ -121,7 +122,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_n2yxl")]
+"values": [ExtResource("5_vrnvl")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false

@@ -71,6 +71,8 @@ func _process(delta):
 func check_flashlight_status():
 	if Input.is_action_just_pressed("flashlight"):
 		if Gamestate.has_flashlight:
+			$OtherSFX.stream = load("res://SFX/Effects/Flashlight.wav")
+			$OtherSFX.play()
 			switch_flashlight()
 
 
@@ -134,6 +136,9 @@ func walking_sounds(group : String):
 				$FootstepsSFX.stream = load("res://SFX/Effects/WoodenFloorWalk.ogg")
 			"ConcreteFloor":
 				$FootstepsSFX.stream = load("res://SFX/Effects/ConcreteWalk.ogg")
+			"GrassFloor":
+				$FootstepsSFX.stream = load("res://SFX/Effects/GrassWalk.mp3")
+				print("Grass")
 		$FootstepsSFX.pitch_scale = randf_range(0.8, 1.2)
 		$FootstepsSFX.play()
 		noiseFootstep = 0.0
